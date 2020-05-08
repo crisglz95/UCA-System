@@ -9,6 +9,19 @@ app.get('/', (req, res) => {
     res.render('home', {
 
     });
-})
+});
+
+
+app.get('/company', (req, res) => {
+    res.render('company', {
+
+    });
+});
+
+app.get('/login', (req, res) => {
+    res.render('login', {
+
+    });
+});
 
 module.exports = app;

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -6,11 +6,231 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
     <title>Document</title>
-</head>
+</head> --}}
+
+{{> header}}
 
 <body>
-    <h1>Hola Mundo HTML</h1>
-    <p>Cualquier Texto</p>
+    {{> navbar}}
+
+    <section>
+      <div id="v">
+        <div class="embed-responsive embed-responsive-16by9">
+          <video
+            class="embed-responsive-item"
+            src="./assets/videos/video.mp4"
+            loop
+            autoplay
+          ></video>
+        </div>
+      </div>
+    </section>
+
+    <section id="empresasComunidad" class="mt-5">
+      <div class="col-12 mt-5 mb-5">
+        <p id="titulos">CONSULTA EMPRESAS DE NUESTRA COMUNIDAD</p>
+        <span id="linea_titulo"></span>
+        <span id="linea_titulo2"></span>
+      </div>
+
+      <section class="py-2 text-xs-center">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-3">
+              <a style="text-decoration: none;" href="" role="button">
+                <span id="giroEmpresarialMenu">
+                  <img src=".assets/img/icons/food.png" class="img-fluid" alt="" />
+                  <p>RESTAURANTES / SERVICIOS DE COMIDA</p>
+                </span>
+              </a>
+            </div>
+
+            <div class="col-md-3">
+              <a style="text-decoration: none;" href="" role="button">
+                <span id="giroEmpresarialMenu">
+                  <img src="./assets/img/icons/Hotel.png" class="img-fluid" alt="" />
+                  <p>HOTELERÍA</p>
+                </span>
+              </a>
+            </div>
+
+            <div class="col-md-3">
+              <a style="text-decoration: none;" href="" role="button">
+                <span id="giroEmpresarialMenu">
+                  <img
+                    src="./assets/img/icons/consultoria.png"
+                    class="img-fluid"
+                    alt=""
+                  />
+                  <p>CONSULTORÍA EMPRESARIAL</p>
+                </span>
+              </a>
+            </div>
+
+            <div class="col-md-3">
+              <a style="text-decoration: none;" href="" role="button">
+                <span id="giroEmpresarialMenu">
+                  <img
+                    src="./assets/img/icons/Medicina.png"
+                    class="img-fluid"
+                    alt=""
+                  />
+                  <p>MEDICINA</p>
+                </span>
+              </a>
+            </div>
+
+            <div class="col-md-3">
+              <a style="text-decoration: none;" href="" role="button">
+                <span id="giroEmpresarialMenu">
+                  <img
+                    src="./assets/img/icons/Construccion.png"
+                    class="img-fluid"
+                    alt=""
+                  />
+                  <p>CONSTRUCCIÓN</p>
+                </span>
+              </a>
+            </div>
+
+            <div class="col-md-3">
+              <a style="text-decoration: none;" href="" role="button">
+                <span id="giroEmpresarialMenu">
+                  <img
+                    src="./assets/img/icons/Industria.png"
+                    class="img-fluid"
+                    alt=""
+                  />
+                  <p>INDUSTRIA</p>
+                </span>
+              </a>
+            </div>
+
+            <div class="col-md-3">
+              <a style="text-decoration: none;" href="" role="button">
+                <span id="giroEmpresarialMenu">
+                  <img
+                    src="./assets/img/icons/Tecnologia.png"
+                    class="img-fluid"
+                    alt=""
+                  />
+                  <p>TECNOLOGÍA</p>
+                </span>
+              </a>
+            </div>
+
+            <div class="col-md-3">
+              <a style="text-decoration: none;" href="" role="button">
+                <span id="giroEmpresarialMenu">
+                  <img
+                    src="./assets/img/icons/Comercio.png"
+                    class="img-fluid"
+                    alt=""
+                  />
+                  <p>COMERCIO</p>
+                </span>
+              </a>
+            </div>
+
+            <div class="col-md-3">
+              <a style="text-decoration: none;" href="" role="button">
+                <span id="giroEmpresarialMenu">
+                  <img src="./assets/img/icons/Autos.png" class="img-fluid" alt="" />
+                  <p>AUTOMOVILES / REFACCIONES</p>
+                </span>
+              </a>
+            </div>
+
+            <div class="col-md-3">
+              <a style="text-decoration: none;" href="" role="button">
+                <span id="giroEmpresarialMenu">
+                  <img
+                    src="./assets/img/icons/veterinaria.png"
+                    class="img-fluid"
+                    alt=""
+                  />
+                  <p>VETERINARIA</p>
+                </span>
+              </a>
+            </div>
+
+            <div class="col-md-3">
+              <a style="text-decoration: none;" href="" role="button">
+                <span id="giroEmpresarialMenu">
+                  <img
+                    src="./assets/img/icons/Servicios.png"
+                    class="img-fluid"
+                    alt=""
+                  />
+                  <p>SERVICIOS</p>
+                </span>
+              </a>
+            </div>
+
+            <div class="col-md-3">
+              <a style="text-decoration: none;" href="" role="button">
+                <span id="giroEmpresarialMenu">
+                  <img src="./assets/img/icons/Otros.png" class="img-fluid" alt="" />
+                  <p>OTROS</p>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!-- CUPONES + BUSCADOS -->
+
+    <section id="Cupones+Buscados" class="mt-5 mb-5">
+      <div class="container">
+        <p id="cuponesMasbuscados">LOS MÁS BUSCADOS...</p>
+
+        <div class="table-responsive-sm">
+          <table class="table">
+            <tr>
+              <th>Imagen Cupon</th>
+              <th>2 X 1 PIZZAS</th>
+              <th>En la compra de una pizza , llevate la segunda Gratis!!</th>
+            </tr>
+            <tr>
+              <th>Imagen Cupon</th>
+              <th>2 X 1 PIZZAS</th>
+              <th>En la compra de una pizza , llevate la segunda Gratis!!</th>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="mt-5">
+      <div class="d-md-flex flex-md-equal w-100 my-md-4 pl-md-4">
+        <div class="bg-light text-center overflow-hidden" id="quienesSomos">
+          <div class="my-3 p-3">
+            <img src="./assets/img/_MG_6684.jpg" class="img-fluid" alt="" />
+          </div>
+        </div>
+        <div
+          class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 justify-content overflow-hidden"
+        >
+          <div class="my-3 py-3">
+            <p id="qstitulo" class="display-3">¿QUIENES SOMOS?</p>
+            <p id="textoqs" class="lead">
+              Conecta un movimiento que emprende la escuela de negocios de la
+              Universidad Cuauhtémoc, con el objetivo de apoyar la economía de
+              las familias Cuauhtémoc. Es una plataforma que busca conectar a la
+              comunidad empresarial y emprendedores de la institución, en donde,
+              a través de un directorio empresarial se da a conocer los
+              productos y servicios a fin de generar una base de clientes,
+              proveedores, promotores y aliados en el modelo de negocios. Esta
+              plataforma ofrece para su comunidad, directorio de empresas,
+              Donaciones adquisiciones de cupones para usar durante y después de
+              la contingencia , asesoría empresarial y capacitación gratuita.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <script src="./assets/js/bootstrap.min.js"></script>
 </body>

@@ -4,6 +4,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
 
+const hbs = require('hbs');
+
 
 const bodyParser = require('body-parser');
 
@@ -16,6 +18,8 @@ app.use(bodyParser.json());
 app.use(express.static('public'));
 //express hbs
 app.set('view engine', 'hbs');
+console.log(__dirname + '/../views/partial');
+hbs.registerPartials(__dirname + '/../views/partials');
 
 app.use(require('./routes/index'));
 
