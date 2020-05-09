@@ -57,6 +57,7 @@ body {
 }
 
 #qstitulo {
+  font-family: "Roboto Condensed", sans-serif;
   font-size: 30px;
 }
 #textoqs {
