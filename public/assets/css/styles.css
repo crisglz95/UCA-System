@@ -102,6 +102,16 @@ a > #giroEmpresarialMenu > p {
   align-items: center;
 }
 
+.informacion {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 18px;
+}
+
+.copyrigth{
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 12px;
+}
+
 /* BREAKPOINT 1 */
 @media (max-width: 1270px) {
   #nav_bar a {
