@@ -5,26 +5,26 @@
     <div class="limiter">
         <div class="container-login100">
             <div class="wrap-login100" data-validate="Empresa">
-                <form class="login100-form validate-form">
+                <form class="login100-form validate-form" action="/login" method="POST">
                     <span class="login100-form-title p-b-48">
                         <img src="./assets/img/uca_logo.png" class="img-responsive" alt="" />
                     </span>
 
                     <div class="wrap-input100 validate-input">
-                        <input class="input100" type="text" name="empresa" />
+                        <input class="input100" type="text" name="correo" />
                         <span class="focus-input100" data-placeholder="Empresa"></span>
                     </div>
 
                     <div class="wrap-input100 validate-input" data-validate="password">
                         <span class="btn-show-pass"> </span>
-                        <input class="input100" type="password" name="contraseña" />
+                        <input class="input100" type="password" name="password" />
                         <span class="focus-input100" data-placeholder="Contraseña"></span>
                     </div>
 
                     <div class="container-login100-form-btn">
                         <div class="wrap-login100-form-btn">
                             <div class="login100-form-bgbtn"></div>
-                            <button class="login100-form-btn" id="btnlogin">
+                            <button class="login100-form-btn" id="btnlogin" type="submit">
                                 Log in
                             </button>
                         </div>

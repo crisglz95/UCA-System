@@ -4,6 +4,7 @@ const app = express();
 app.use(require('./empresa'));
 app.use(require('./cupon'));
 app.use(require('./uploads'));
+app.use(require('./login'));
 
 app.get('/', (req, res) => {
     res.render('home', {
