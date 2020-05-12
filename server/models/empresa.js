@@ -8,7 +8,7 @@ let empresaSchema = new Schema({
     correo: {
         type: String,
         unique: true,
-        required: [true, 'El correo electronico es necesario']
+        // required: [true, 'El correo electronico es necesario']
     },
     nombre_empresa: String,
     tel: Number,
@@ -30,8 +30,8 @@ let empresaSchema = new Schema({
     }
 });
 
-empresaSchema.plugin(uniqueValidator, {
-    message: '{PATH} debe de ser unico'
-});
+// empresaSchema.plugin(uniqueValidator, {
+//     message: '{PATH} debe de ser unico'
+// });
 
 module.exports = mongoose.model('Formulario_Empresa', empresaSchema);

@@ -1,5 +1,6 @@
 const express = require('express');
 const Empresa = require('../models/empresa');
+const bcrypt = require('bcrypt');
 
 const app = express();
 
@@ -24,6 +25,15 @@ app.post('/login', (req, res) => {
             });
         }
 
+        if (!bcrypt.compareSync(body.password, empresaDB.password)) {
+            return res.status(400).json({
+                ok: false,
+                err: {
+                    message: 'Usuario o Contraseña incorrectos'
+                }
+            });
+        }
+
         res.render('home', {
             empresaDB
         });
@@ -33,15 +43,6 @@ app.post('/login', (req, res) => {
         //     empresa: empresaDB,
         //     message: 'Inicio de sesion Correcto'
         // })
-
-        // if (!bcrypt.compareSync(body.password, empresaDB.password)) {
-        //     return res.status(400).json({
-        //         ok: false,
-        //         err: {
-        //             message: 'Usuario o Contraseña incorrectos'
-        //         }
-        //     });
-        // }
 
         // let token = jwt.sign({
         //     usuario: usuarioDB

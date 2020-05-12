@@ -1,6 +1,8 @@
 const express = require('express');
 const Empresa = require('../models/empresa');
 
+const bcrypt = require('bcrypt');
+
 const app = express();
 
 app.get('/empresa', function(req, res) {
@@ -36,7 +38,24 @@ app.get('/empresa', function(req, res) {
 app.post('/empresa', function(req, res) {
     let body = req.body;
 
-    let empresa = new Empresa({});
+
+    body.password = bcrypt.hashSync(req.body.password, 10);
+    console.log(body);
+
+    let empresa = new Empresa(body);
+
+
+    if (body.nombre_completo === undefined) {
+        res.status(400).json({
+            ok: false,
+            mensaje: 'El nombre es necesario'
+        });
+    }
+    // else {
+    //     res.json({
+    //         persona: body
+    //     });
+    // }
 
     empresa.save((err, empresaDB) => {
         if (err) {
@@ -51,17 +70,6 @@ app.post('/empresa', function(req, res) {
             empresaDB
         })
     });
-
-    if (body.nombre === undefined) {
-        res.status(400).json({
-            ok: false,
-            mensaje: 'El nombre es necesario'
-        });
-    } else {
-        res.json({
-            persona: body
-        });
-    }
 
 });
 
