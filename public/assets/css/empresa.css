@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald&display=swap');
+.contenedor {
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.menu {
+    width: 20%;
+    height: 100%;
+    background: #00034E;
+    color: #FFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu>ul {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    list-style-type: none!important;
+}
+
+.menu li {
+    margin-bottom: 20px;
+    height: 25%;
+    font-family: 'Oswald', sans-serif;
+    font-size: 21px;
+    border-bottom: 1px solid #FFF;
+}
+
+.menu li>img {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    margin: 0 8px 15px 15px;
+}
+
+.menu li>a {
+    display: inline-block;
+    text-decoration: none;
+    color: #FFF;
+}
+
+.contenido {
+    width: 80%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.contenido img {
+    width: 450px;
+}
+
+.contenido h1 {
+    color: #00034E;
+    font-family: 'Oswald', sans-serif;
+    font-size: 50px;
+}
+
+#sidebarCollapse {
+    display: none;
+}
+
+@media (min-width: 300px) and (max-width: 500px) {
+    #menu {
+        width: 300px;
+        margin-left: -300px;
+    }
+    #menu.active {
+        margin-left: 0;
+    }
+    .contenido {
+        width: 100%;
+        height: 100vh;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .contenido img {
+        width: 100%;
+    }
+    #sidebarCollapse {
+        display: block;
+    }
+    .contenido button {
+        position: absolute;
+        left: 25px;
+        top: 25px;
+        background: #002752;
+        color: #FFF;
+    }
+    .contenido button .fa {
+        color: #FFF;
+    }
+}

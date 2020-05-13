@@ -34,7 +34,7 @@ app.post('/login', (req, res) => {
             });
         }
 
-        res.render('home', {
+        res.render('home-sys', {
             empresaDB
         });
 

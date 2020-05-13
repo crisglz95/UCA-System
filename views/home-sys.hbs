@@ -1,0 +1,34 @@
+{{> header}}
+
+<body>
+    <div class="contenedor">
+        <div class="menu" id="menu">
+            <ul>
+                <li>
+                    <img src="./assets/img/empresas/inicio.png" alt="">
+                    <a href="">Inicio</a>
+                </li>
+                <li>
+                    <img src="./assets/img/empresas/cupones.png" alt="">
+                    <a href="">Cupones</a>
+                </li>
+                <li>
+                    <img src="./assets/img/empresas/Donaciones.png" alt="">
+                    <a href="">Donaciones</a>
+                </li>
+            </ul>
+        </div>
+        <div class="contenido">
+            <button type="button" id="sidebarCollapse" class="btn" data-toggle="collapse">
+                <span class="navbar-toggler-icon"><i class="fa fa-list" aria-hidden="true"></i></span>
+            </button>
+            <div class="imagen">
+                <img src="./assets/img/uni2.png" class="">
+            </div>
+            <h1>Bienvenido Empresa {{ empresaDB.nombre_empresa }}</h1>
+        </div>
+    </div>
+
+
+
+{{> footer}}
