@@ -1,15 +1,48 @@
 const express = require("express");
 const Empresa = require("../models/empresa");
 const cupon = require("../models/cupon");
-
 const app = express();
 
-app.get("/cupon", function (res, req) {
-  console.log("Ingresa Cupon");
+
+// LISTAR CUPONES GENERALES
+app.get("/listarCupones", function (req, res) {
+  cupon.find({}).exec((err, cupones) => {
+    if (err) {
+      return res.status(400).json({
+        ok: false,
+        err,
+      });
+    }
+
+    res.json({
+      ok: true,
+      cupones,
+    });
+  });
 });
 
-// POST
-app.post("/cupon", function (req, res) {
+
+//LISTAR CUPONES EMPRESA
+app.get("/listarCuponesEmpresa", function (req, res) {
+  cupon.find({ empresa: "tesla" }).exec((err, cupones) => {
+    if (err) {
+      return res.status(400).json({
+        ok: false,
+        err,
+      });
+    }
+
+    res.json({
+      ok: true,
+      cupones,
+    });
+  });
+});
+
+
+
+// AGREGAR CUPONES
+app.post("/listarCupones", function (req, res) {
   console.log("POST /cupon");
   console.log(req.body);
   let body = req.body;

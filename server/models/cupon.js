@@ -16,7 +16,9 @@ let cuponSchema = new Schema({
   },
   condiciones: String,
   empresa: String,
-  //   imagen_cupon: String,
+  fecha_inicio: Date,
+  fecha_final: Date,
+  imagen_cupon: String,
 });
 
 module.exports = mongoose.model("cupon", cuponSchema);

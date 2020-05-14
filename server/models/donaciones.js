@@ -6,9 +6,9 @@ let donacionSchema = new Schema({
   descripcion_donacion: String,
   cuenta_bancaria: Number,
   banco: String,
-  //   fecha_inicio: Date,
-  //   fecha_final: Date,
-  //   imagen:String
+  fecha_inicio: Date,
+  fecha_final: Date,
+  imagen: String,
 });
 
 module.exports = mongoose.model("Donacion", donacionSchema);

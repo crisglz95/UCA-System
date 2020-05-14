@@ -3,11 +3,44 @@ const Empresa = require("../models/empresa");
 const donaciones = require("../models/donaciones");
 const app = express();
 
-app.get("/donaciones", function (res, req) {
-  console.log("work donar");
+// LISTAR DONACIONES GENERALES
+app.get("/donaciones", function (req, res) {
+  donaciones.find({}).exec((err, donacion) => {
+    if (err) {
+      return res.status(400).json({
+        ok: false,
+        err,
+      });
+    }
+
+    res.json({
+      ok: true,
+      donacion,
+    });
+  });
 });
 
-// POST
+
+//LISTAR DONACIONES DE UNA EMPRESA
+app.get("/donacionesEmpresa", function (req, res) {
+  cupon.find({}).exec((err, cupones) => {
+    if (err) {
+      return res.status(400).json({
+        ok: false,
+        err,
+      });
+    }
+
+    res.json({
+      ok: true,
+      cupones,
+    });
+  });
+});
+
+
+
+// POST DONACIONES
 app.post("/donaciones", function (req, res) {
   console.log("POST /donaciones");
   console.log(req.body);

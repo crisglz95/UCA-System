@@ -19,4 +19,8 @@ app.get("/login", (req, res) => {
   res.render("login", {});
 });
 
+app.get("/cupon", (req, res) => {
+  res.render("cupon", {});
+});
+
 module.exports = app;
