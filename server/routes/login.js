@@ -1,6 +1,9 @@
 const express = require('express');
 const Empresa = require('../models/empresa');
+
 const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
+const store = require('store');
 
 const app = express();
 
@@ -34,15 +37,26 @@ app.post('/login', (req, res) => {
             });
         }
 
+        let token = jwt.sign({
+            empresa: empresaDB
+        }, process.env.SEED, { expiresIn: process.env.CADUCIDAD_TOKEN });
+
+        res.cookie('token', token, { httpOnly: true });
+
+        // store.set('token', { token });
+
+        // res.setHeader('token', token);
+
         res.render('home-sys', {
-            empresaDB
+            empresaDB,
+            ok: true,
+            empresa: empresaDB,
         });
 
         // res.json({
         //     ok: true,
         //     empresa: empresaDB,
-        //     message: 'Inicio de sesion Correcto'
-        // })
+        // });
 
         // let token = jwt.sign({
         //     usuario: usuarioDB

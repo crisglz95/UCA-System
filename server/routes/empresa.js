@@ -1,13 +1,15 @@
-const express = require("express");
-const Empresa = require("../models/empresa");
+const express = require('express');
+const Empresa = require('../models/empresa');
+const { verificaToken } = require('../middlewares/autenticacion');
 
 const bcrypt = require("bcrypt");
 
 const app = express();
 
-app.get("/empresa", function (req, res) {
-  let desde = req.query.desde || 0;
-  desde = Number(desde);
+app.get('/empresa', verificaToken, function(req, res) {
+    console.log(req.empresa);
+    let desde = req.query.desde || 0;
+    desde = Number(desde);
 
   let limite = req.query.limite || 5;
   limite = Number(limite);

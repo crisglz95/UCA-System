@@ -2,12 +2,15 @@ require('./config/config');
 
 const express = require('express');
 const mongoose = require('mongoose');
+const cookieParser = require('cookie-parser');
 const app = express();
 
 const hbs = require('hbs');
 
 
 const bodyParser = require('body-parser');
+
+app.use(cookieParser());
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }));
