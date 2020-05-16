@@ -1,10 +1,82 @@
+{{!-- CUPONES PAGINA --}}
 {{> header}}
+{{!-- cupones --}}
+<link rel="stylesheet" href="./assets/css/cupon.css">
 
 <body>
     {{>navbar}}
 
+    <div id="bodyCupones">
 
 
+        <div id="cuponesTitulo">
+            <span id="letrasCupones">CUPONES</span>
+            <span id="LA1"></span>
+            <span id="LA2"></span>
+        </div>
+
+
+        <div id="CuponesMenu">
+            <nav class="navbar navbar-expand-lg navbar-light  ">
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#cuponesnavbar"
+                    aria-controls="cuponesnavbar" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="cuponesnavbar">
+                    <div class="navbar-nav">
+                        <ul>
+                            <p id="tcupon">Cupones de descuento</p>
+                            <li>
+                                <hr />
+                                <a href="" style="text-decoration: none;" class="cuponA"><img
+                                        src="./assets/img/icons/MasUtilizados.png" alt="" />
+                                    <span class="cupon"> Cupones más utilizados</span></a>
+                            </li>
+                            <hr />
+                            <li>
+                                <a href="" style="text-decoration: none;" class="cuponA"><img
+                                        src="./assets/img/icons/Envio Gratis.png" alt="" />
+                                    <span class="cupon">Envío gratis</span></a>
+                            </li>
+                            <hr />
+                            <li>
+                                <a href="" style="text-decoration: none;" class="cuponA"><img
+                                        src="./assets/img/icons/Nuevos.png" alt="" /><span class="cupon">Nuevos
+                                        cupones</span></a>
+                            </li>
+                            <hr />
+                            <li>
+                                <a href="" style="text-decoration: none;" class="cuponA"><img
+                                        src="./assets/img/icons/Estudiantes.png" alt="" /><span
+                                        class="cupon">Estudiantes</span></a>
+                            </li>
+                            <hr />
+                            <li>
+                                <a href="" style="text-decoration: none;" class="cuponA"><img
+                                        src="./assets/img/icons/UltimaOportunidad.png" alt="" />
+                                    <span class="cupon">¡Ultima oportunidad!</span></a>
+                            </li>
+                            <hr />
+                            <li>
+                                <a href="" style="text-decoration: none;" class="cuponA"><img
+                                        src="./assets/img/icons/Descuentos.png" alt="" /><span
+                                        class="cupon">Descuentos</span></a>
+                            </li>
+                            <hr />
+                            <li>
+                                <a href="" style="text-decoration: none;" class="cuponA"><img
+                                        src="./assets/img/icons/Promociones.png" alt="" /><span
+                                        class="cupon">Promociones</span></a>
+                            </li>
+                            <hr>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
 
 </body>
 {{>footer}}
