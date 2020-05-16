@@ -1,6 +1,8 @@
 const express = require("express");
 const app = express();
 
+const cupon = require("../models/cupon");
+
 const { verificaToken } = require('../middlewares/autenticacion');
 
 app.get("/company", (req, res) => {
@@ -12,7 +14,22 @@ app.get("/login", (req, res) => {
 });
 
 app.get("/cupon", (req, res) => {
-    res.render("cupon", {});
+    cupon.find({}).exec((err, cupones) => {
+        if (err) {
+            return res.status(400).json({
+                ok: false,
+                err,
+            });
+        }
+
+        console.log(cupones);
+
+        res.render('cupon', {
+            ok: true,
+            cupones,
+        });
+    });
+    //res.render("cupon", {});
 });
 
 //Redireccionamiento de menu lateral
