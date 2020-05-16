@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 
 const cupon = require("../models/cupon");
+const donacion = require("../models/donaciones");
 
 const { verificaToken } = require('../middlewares/autenticacion');
 
@@ -53,18 +54,31 @@ app.get("/sistemaCupones", verificaToken, (req, res) => {
     // });
 });
 
+app.get("/sistemaDonaciones", verificaToken, (req, res) => {
+    let idEmpresa = req.empresa._id;
+    donacion.find({ empresa: idEmpresa }).exec((err, donacionesDB) => {
+        if (err) {
+            return res.status(400).json({
+                ok: false,
+                err
+            });
+        }
+        res.render('donaciones-sys', {
+            empresa: req.empresa,
+            donaciones: donacionesDB
+        });
+    });
+    // res.render("donaciones-sys", {
+    //     empresa: req.empresa
+    // });
+});
+
 //Redireccionamiento de menu lateral
 app.get("/sistemaHome", verificaToken, (req, res) => {
     res.render('home-sys', {
         empresa: req.empresa
     })
 })
-
-app.get("/sistemaDonaciones", verificaToken, (req, res) => {
-    res.render("donaciones-sys", {
-        empresa: req.empresa
-    });
-});
 
 app.get("/formCupones", verificaToken, (req, res) => {
     res.render("form-cupones", {
