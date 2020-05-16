@@ -30,20 +30,22 @@
                 <thead>
                     <tr>
                         <th>N°</th>
-                        <th>Nombre</th>
+                        {{!-- <th>Nombre</th> --}}
                         <th>Descripcion</th>
                         <th>Codigo</th>
                         <th>Operaciones</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th>1</th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                    </tr>
+                    {{#each cupones}}
+                        <tr>
+                            <td></td>
+                            {{!-- <td id="image"><img src="./assets/img/uni2.png" alt=""></td> --}}
+                            <td>{{this.titulo_cupon}}</td>
+                            <td>{{this.codigo}}</td>
+                            <td>{{this.tipo_cupon}}</td>
+                        </tr>
+                    {{/each}}
                 </tbody>
             </table>
         </div>

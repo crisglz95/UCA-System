@@ -32,19 +32,33 @@ app.get("/cupon", (req, res) => {
     //res.render("cupon", {});
 });
 
+app.get("/sistemaCupones", verificaToken, (req, res) => {
+    let idEmpresa = req.empresa._id;
+    cupon.find({ empresa: idEmpresa }).exec((err, cuponesDB) => {
+        if (err) {
+            return res.status(400).json({
+                ok: false,
+                err
+            });
+        }
+
+        res.render('cupones-sys', {
+            empresa: req.empresa,
+            cupones: cuponesDB
+        })
+    });
+    // console.log(req.empresa);
+    // res.render("cupones-sys", {
+    //     empresa: req.empresa
+    // });
+});
+
 //Redireccionamiento de menu lateral
 app.get("/sistemaHome", verificaToken, (req, res) => {
     res.render('home-sys', {
         empresa: req.empresa
     })
 })
-
-app.get("/sistemaCupones", verificaToken, (req, res) => {
-    console.log(req.empresa);
-    res.render("cupones-sys", {
-        empresa: req.empresa
-    });
-});
 
 app.get("/sistemaDonaciones", verificaToken, (req, res) => {
     res.render("donaciones-sys", {

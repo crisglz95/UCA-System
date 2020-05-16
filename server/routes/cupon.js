@@ -4,6 +4,8 @@ const cupon = require("../models/cupon");
 const app = express();
 
 
+const { verificaToken } = require('../middlewares/autenticacion');
+
 // LISTAR CUPONES GENERALES
 app.get("/listarCupones", function(req, res) {
     cupon.find({}).exec((err, cupones) => {
@@ -42,10 +44,11 @@ app.get("/listarCuponesEmpresa", function(req, res) {
 
 
 // AGREGAR CUPONES
-app.post("/listarCupones", function(req, res) {
+app.post("/listarCupones", verificaToken, function(req, res) {
     console.log("POST /cupon");
     console.log(req.body);
     let body = req.body;
+    body.empresa = req.empresa._id;
 
     let CUPON = new cupon(body);
 
