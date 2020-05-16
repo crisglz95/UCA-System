@@ -14,6 +14,11 @@ app.get("/login", (req, res) => {
     res.render("login", {});
 });
 
+app.get("/consultoria_y_capacitacion", (req, res) => {
+    res.render("consultoria_y_capacitacion", {});
+});
+
+
 app.get("/cupon", (req, res) => {
     cupon.find({}).exec((err, cupones) => {
         if (err) {
