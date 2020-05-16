@@ -56,6 +56,12 @@
     flex-direction: column;
 }
 
+.contenido#form-cupon {
+    display: block;
+    height: 100vh;
+    overflow-y: scroll;
+}
+
 .contenido img {
     width: 450px;
 }

@@ -1,0 +1,176 @@
+{{> header}}
+
+<body>
+    <div class="contenedor">
+        <div class="menu" id="menu">
+            <ul>
+                <li>
+                    <img src="./assets/img/empresas/inicio.png" alt="">
+                    <a href="/sistemaHome">Inicio</a>
+                </li>
+                <li>
+                    <img src="./assets/img/empresas/cupones.png" alt="">
+                    <a href="/sistemaCupones">Cupones</a>
+                </li>
+                <li>
+                    <img src="./assets/img/empresas/Donaciones.png" alt="">
+                    <a href="/sistemaDonaciones">Donaciones</a>
+                </li>
+            </ul>
+        </div>
+        <div class="contenido">
+            <button type="button" id="sidebarCollapse" class="btn" data-toggle="collapse">
+                <span class="navbar-toggler-icon"><i class="fa fa-list" aria-hidden="true"></i></span>
+            </button>
+            <h1>Formulario Donacion</h1>
+            <div class="container text-center">
+      <div class="jumbotron" style="background-color: white;">
+        <!-- FORMULARIO -->
+
+        <div class="card" style="border: white;">
+          <div class="card-body">
+            <div class="col-md-6 mb-3">
+              <p class="text-center" id="agregarDonacion">Solicitar Donación</p>
+            </div>
+            <form action="/add" method="POST">
+              <div class="form-group col-md-6 mb-3">
+                <label for="" class="labelcupon">Titulo donación:</label>
+                <input
+                  type="text"
+                  name="title"
+                  placeholder="Escribe el titulo"
+                  class="form-control"
+                  name="titulo_donacion"
+                />
+              </div>
+
+              <div class="form-group col-md-6 mb-3">
+                <label for="" class="labelcupon">N° de cuenta:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="ingresa N° de cuenta"
+                  name="cuenta_bancaria"
+                />
+              </div>
+
+              <div class="form-group col-md-6 mb-3">
+                <label for="" class="labelcupon">Banco:</label>
+                <select name="banco" id="" class="form-control">
+                  <option value="">Selecciona tu banco</option>
+                  <option value="Banamex">Banamex</option>
+                  <option value="Santander">Santander</option>
+                  <option value="HSBC">HSBC </option>
+                  <option value="Scotiabank">Scotiabank </option>
+                  <option value="Bancomer">Bancomer</option>
+                  <option value="Banorte">Banorte</option>
+                  <option value="Banco Interacciones"
+                    >Banco Interacciones</option
+                  >
+                  <option value="Banco Inbursa">Banco Inbursa</option>
+                  <option value="banca Mifel">banca Mifel</option>
+                  <option value="Banco Regional de Monterrey"
+                    >Banco Regional de Monterrey</option
+                  >
+                  <option value="Banco Invex">Banco Invex</option>
+                  <option
+                    value="Banco del Bajio
+                  "
+                    >Banco del Bajio
+                  </option>
+                  <option value="Bansi">Bansi</option>
+                  <option value="Banca Afirme">Banca Afirme</option>
+                  <option value="Bank of America México"
+                    >Bank of America México</option
+                  >
+                  <option value="Banco J.P. Morgan">Banco J.P. Morgan</option>
+                  <option value="Banco Ve Por Mas">Banco Ve Por Mas</option>
+                  <option value="American Express Bank"
+                    >American Express Bank</option
+                  >
+                  <option value="Investa Bank">Investa Bank</option>
+                  <option value="CiBanco">CiBanco</option>
+                  <option value="Banco Monex">Banco Monex</option>
+                  <option value="Deutsche Bank México"
+                    >Deutsche Bank México</option
+                  >
+                  <option value="Banco Azteca">Banco Azteca</option>
+                  <option value="Banco Credit Suisse (México)"
+                    >Banco Credit Suisse (México)</option
+                  >
+                  <option value="Banco Autofin México"
+                    >Banco Autofin México</option
+                  >
+                  <option value="Barclays Bank México"
+                    >Barclays Bank México</option
+                  >
+                  <option value="Banco Ahorro Famsa">Banco Ahorro Famsa</option>
+                  <option value="Intercam Banco">Intercam Banco</option>
+                  <option value="ABC Capital">ABC Capital</option>
+                  <option value="Banco Actinver">Banco Actinver</option>
+                  <option value="Banco Compartamos">Banco Compartamos</option>
+                  <option value="Banco Multiva">Banco Multiva</option>
+                  <option value="UBS Bank México">UBS Bank México</option>
+                  <option value="Bancoppel">Bancoppel</option>
+                  <option value="ConsuBanco">ConsuBanco</option>
+                  <option value="Banco Wal-Mart de México"
+                    >Banco Wal-Mart de México</option
+                  >
+                  <option value="Volkswagen Bank">Volkswagen Bank</option>
+                  <option value="Banco Base">Banco Base</option>
+                  <option value="Banco Pagatodo">Banco Pagatodo</option>
+                  <option value="Banco Forjadores">Banco Forjadores</option>
+                  <option value="Bankaool">Bankaool</option>
+                  <option value="Banco Bancrea">Banco Bancrea</option>
+                  <option value="Banco Inmobiliario Mexicano"
+                    >Banco Inmobiliario Mexicano</option
+                  >
+                  <option value="Fundación Dondé Banco"
+                    >Fundación Dondé Banco</option
+                  >
+                </select>
+              </div>
+
+              <div class="form-row">
+                <div class="col-md-3 mb-3">
+                  <label for="validationCustom03" class="labelcupon"
+                    >Fecha Inicio:</label
+                  >
+                  <input type="text" name="fecha_inicio" class="form-control" />
+                </div>
+                <div class="col-md-3 mb-3">
+                  <label for="validationCustom03" class="labelcupon"
+                    >Fecha Final:</label
+                  >
+                  <input type="date" class="form-control" name="fecha_final" />
+                </div>
+              </div>
+
+              <div class="form-group col-md-6 mb-3">
+                <label for="" class="labelcupon"> Descripción:</label>
+                <textarea
+                  name="descripcion_donacion"
+                  id=""
+                  cols="50"
+                  rows="3"
+                  class="form-control"
+                  placeholder="Escribe descripción del cupon"
+                ></textarea>
+                <button
+                  type="submit"
+                  class="btn btn-outline-info btn-block mt-4"
+                >
+                  Agregar
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+        </div>
+    </div>
+
+
+
+    {{> footer}}
