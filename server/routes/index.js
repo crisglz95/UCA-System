@@ -10,6 +10,7 @@ app.use(require("./cupon"));
 app.use(require("./donaciones"));
 app.use(require("./enlaces"))
 app.use(require("./consultoria_y_capacitacion"));
+app.use(require('./imagenes'));
 
 app.get("/", (req, res) => {
     res.render("home", {});
