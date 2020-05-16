@@ -76,6 +76,31 @@
                 </div>
             </nav>
         </div>
+
+        <div id="tabla-cupon">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th id="tit-image">Empresa</th>
+                        <th>Cupon</th>
+                        <th>Codigo</th>
+                        <th>Tipo Cupon</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each cupones}}
+                        <tr>
+                            <td></td>
+                            <td id="image"><img src="./assets/img/uni2.png" alt=""></td>
+                            <td>{{this.titulo_cupon}}</td>
+                            <td>{{this.codigo}}</td>
+                            <td>{{this.tipo_cupon}}</td>
+                        </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
     </div>
 
 </body>
