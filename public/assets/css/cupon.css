@@ -137,7 +137,7 @@ td img {
     height: 60px;
 }
 
-
+}
 /* div > div > .card > .card-body >  */
 
   #CuponesMenu {
@@ -225,7 +225,7 @@ td img {
   }
 
   #btnAgregar {
-    margin-top: 8%;
+    margin-top: 10%;
   }
     #bodyCupones {
         width: 100%;
@@ -303,7 +303,7 @@ td img {
   }
 
   #btnAgregar {
-    margin-top: 38%;
+    margin-top: 40%;
     margin-left: -9%;
   }
     #bodyCupones {
@@ -368,7 +368,7 @@ td img {
   }
 
   #btnAgregar {
-    margin-top: 46%;
+    margin-top: 48%;
     margin-left: -10.5%;
   }
     #letrasCupones {
@@ -471,7 +471,7 @@ td img {
     margin-left: 6.5%;
   }
   #btnAgregar {
-    margin-top: 58%;
+    margin-top: 60%;
     margin-left: -13%;
   }
     #CuponesMenu {
@@ -505,4 +505,4 @@ td img {
         font-size: 21px;
         margin-left: 6.5%;
     }
-}
+  }
