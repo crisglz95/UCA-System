@@ -35,10 +35,10 @@
                 <div class="col-md-12 mb-3">
                   <p class="text-center" id="agregarCuponT">Agregar Cupón</p>
                 </div>
-                <form action="/add" method="POST">
+                <form action="/listarCupones" method="POST">
                   <div class="form-group col-md-12 mb-3">
                     <label for="" class="labelcupon">Titulo Cupón:</label>
-                    <input type="text" name="title" placeholder="Escribe el titulo" class="form-control"
+                    <input type="text" name="titulo_cupon" placeholder="Escribe el titulo" class="form-control"
                       name="titulo_cupon" />
                   </div>
                   <div class="form-group col-md-12 mb-3">
@@ -88,10 +88,10 @@
                     </div>
                   </div>
 
-                  <div class="form-group col-md-12 mb-3">
+                  {{!-- <div class="form-group col-md-12 mb-3">
                     <label for="" class="labelcupon"> Imagen de cupon:</label>
                     <input type="file"  class="form-control" name="imagen_cupon" accept="image/png , .jpeg, .jpg , image/gif">
-                  </div>
+                  </div> --}}
 
                   <div class="form-group col-md-12 mb-3">
                     <label for="" class="labelcupon"> Descripción:</label>
