@@ -117,6 +117,38 @@ td img {
   text-align: center;
 }
 
+#miModal {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* height: 80vh; */
+}
+#tituloCupon {
+  font-size: 28px;
+  font-family: "Oswald", sans-serif;
+  margin-bottom: 1%;
+}
+
+.TxtMInf {
+  font-size: 17px;
+  font-family: "Roboto Condensed", sans-serif;
+  margin-bottom: 3%;
+}
+
+#text {
+  color: black;
+}
+#text:hover {
+  color: #00a3bd;
+}
+
 /* div > div > .card > .card-body >  */
 @media (max-width: 1024px) {
   #bodcupon {

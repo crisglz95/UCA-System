@@ -22,6 +22,7 @@
   font-size: 35px;
 }
 
+
 #linea_titulo {
   height: 4px;
   width: 30%;
@@ -107,10 +108,13 @@ a > #giroEmpresarialMenu > p {
   font-size: 18px;
 }
 
-.copyrigth{
+.copyrigth {
   font-family: "Roboto Condensed", sans-serif;
   font-size: 12px;
 }
+
+/* MODAL */
+
 
 /* BREAKPOINT 1 */
 @media (max-width: 1270px) {
@@ -226,4 +230,19 @@ a > #giroEmpresarialMenu > p {
   #v {
     margin-top: 16vh;
   }
+}
+@media (max-width: 320px) {
+  
+  #tituloCupon {
+    font-size: 24px;
+    font-family: "Oswald", sans-serif;
+    /* margin-bottom: 1%; */
+  }
+  
+  .TxtMInf {
+    font-size: 14px;
+    font-family: "Roboto Condensed", sans-serif;
+    margin-bottom: 3%;
+  }
+  
 }

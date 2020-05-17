@@ -78,7 +78,7 @@
                     <table class="table">
 
                         {{#each cupones}}
-                        
+
                         <tr>
                             <td>{{@key}}</td>
                             <td id="image"><img src="./assets/img/uni2.png" alt=""></td>
@@ -91,60 +91,51 @@
                                 </button></td>
                         </tr>
                         <!-- MODAL -->
-                        
+
 
                         {{/each}}
                     </table>
                     {{#each cupones}}
-                        <div class="modal fade" id="miModal{{@key}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-                            aria-hidden="true">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            {{!-- <p>{{this.titulo_cupon}}</p> --}}
-                                            <span aria-hidden="true" class="text-center"> &times;</span>
+                    <div class="modal fade" id="miModal{{@key}}" tabindex="-1" role="dialog"
+                        aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true" class="text-center"> &times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div id="contenedorImg">
+
+                                        <img id="imgModal" class="img-responsive" src="./assets/img/uni2.png" alt="" />
+                                    </div>
+                                    <p id="tituloCupon">
+                                        {{this.titulo_cupon}}
+                                    </p>
+
+                                    <p >
+                                        Codigo:
+                                        <button  id="btnCopy" style="text-decoration: none;" type="button" class="btn btn-link"
+                                           >
+                                            <b> <span id="text" class="codigo">{{this.codigo}}</span></b>
                                         </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div id="contenedorImg">
-
-                                            <img id="imgModal" class="img-responsive" src="./assets/img/uni2.png"
-                                                alt="" />
-                                        </div>
-                                        <p>
-                                            {{this.titulo_cupon}}
-                                        </p>
-
-                                        <p>
-                                            Codigo:
-                                            <button style="text-decoration: none;" type="button" class="btn btn-link"
-                                                id="btnCopy">
-                                                <b> <span id="text" class="codigo">{{this.codigo}}</span></b>
-                                            </button>
-                                        </p>
-                                        <p>Compra minima: {{this.minimo_compra}}</p>
-                                        <p>Valido para: {{this.persona}}</p>
-                                        <p>Condiciones: {{this.condiciones}}</p>
-                                        <p>Empresa:</p>
-                                        <p>Fecha vencimiento</p>
-                                    </div>
+                                    </p>
+                                    <p class="TxtMInf">Compra minima: {{this.minimo_compra}}</p>
+                                    <p class="TxtMInf">Condiciones: {{this.condiciones}}</p>
+                                    <p class="TxtMInf">Descripcion:{{this.decripcion}}</p>
+                                    <p class="TxtMInf">Fecha vencimiento {{this.fecha_final}}</p>
                                 </div>
                             </div>
                         </div>
+                    </div>
 
                     {{/each}}
                 </div>
             </div>
 
-
-
         </section>
-
     </div>
-
-
-
-
 </body>
+
 {{>footer}}

@@ -6,6 +6,9 @@ const app = express();
 
 const { verificaToken } = require('../middlewares/autenticacion');
 
+
+
+
 // LISTAR CUPONES GENERALES
 app.get("/listarCupones", function(req, res) {
     cupon.find({}).exec((err, cupones) => {
