@@ -78,26 +78,32 @@
                     <table class="table">
 
                         {{#each cupones}}
+                        
                         <tr>
-                            <td></td>
+                            <td>{{@key}}</td>
                             <td id="image"><img src="./assets/img/uni2.png" alt=""></td>
                             <td>{{this.titulo_cupon}}</td>
                             <td>{{this.codigo}}</td>
                             <td>{{this.tipo_cupon}}</td>
                             <td> <button type="button" class="btn btn-outline-info" data-toggle="modal"
-                                    data-target="#miModal">
+                                    data-target="#miModal{{@key}}">
                                     Ver
                                 </button></td>
                         </tr>
                         <!-- MODAL -->
-                        <div class="modal fade" id="miModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                        
+
+                        {{/each}}
+                    </table>
+                    {{#each cupones}}
+                        <div class="modal fade" id="miModal{{@key}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
                             aria-hidden="true">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <p>{{this.titulo_cupon}}</p>
-                                            <!-- <span aria-hidden="true" class="text-center"> &times;</span> -->
+                                            {{!-- <p>{{this.titulo_cupon}}</p> --}}
+                                            <span aria-hidden="true" class="text-center"> &times;</span>
                                         </button>
                                     </div>
                                     <div class="modal-body">
@@ -107,20 +113,19 @@
                                                 alt="" />
                                         </div>
                                         <p>
-                                            Para que vuelvas a viajar con Uber, disfruta de este cupón para
-                                            obtener 50% menos en tu segundo viaje.
+                                            {{this.titulo_cupon}}
                                         </p>
 
                                         <p>
                                             Codigo:
                                             <button style="text-decoration: none;" type="button" class="btn btn-link"
                                                 id="btnCopy">
-                                                <b> <span id="text" class="codigo">UBER50DES</span></b>
+                                                <b> <span id="text" class="codigo">{{this.codigo}}</span></b>
                                             </button>
                                         </p>
-                                        <p>Compra minima</p>
-                                        <p>Valido para:</p>
-                                        <p>Condiciones</p>
+                                        <p>Compra minima: {{this.minimo_compra}}</p>
+                                        <p>Valido para: {{this.persona}}</p>
+                                        <p>Condiciones: {{this.condiciones}}</p>
                                         <p>Empresa:</p>
                                         <p>Fecha vencimiento</p>
                                     </div>
@@ -128,9 +133,7 @@
                             </div>
                         </div>
 
-
-                        {{/each}}
-                    </table>
+                    {{/each}}
                 </div>
             </div>
 
