@@ -80,7 +80,8 @@
                   <div class="form-row">
                     <div class="col-md-12 mb-3">
                       <label for="validationCustom03" class="labelcupon">Fecha Inicio:</label>
-                      <input type="text" name="fecha_inicio" class="form-control" />
+                      <input type="text" name="fecha_inicio" id="fecha_inicio" class="form-control text-center" />
+                      {{!-- <h1 id="date"></h1> --}}
                     </div>
                     <div class="col-md-12 mb-3">
                       <label for="validationCustom03" class="labelcupon">Fecha Final:</label>
@@ -92,27 +93,28 @@
                     <label for="" class="labelcupon"> Imagen de cupon:</label>
                     <input type="file"  class="form-control" name="imagen_cupon" accept="image/png , .jpeg, .jpg , image/gif">
                   </div> --}}
-                    <input type="file" class="form-control" name="imagen_cupon"
-                      accept="image/png , .jpeg, .jpg , image/gif">
-                  </div>
-
-                  <div class="form-group col-md-12 mb-3">
-                    <label for="" class="labelcupon"> Descripción:</label>
-                    <textarea name="decripcion" id="" cols="50" rows="3" class="form-control"
-                      placeholder="Escribe descripción del cupon "></textarea>
-                    <button type="submit" id="btnAgregar" class="btn btn-outline-info btn-block ">
-                      Agregar
-                    </button>
-                  </div>
-                </form>
+                  <input type="file" class="form-control" name="imagen_cupon"
+                    accept="image/png , .jpeg, .jpg , image/gif">
               </div>
+
+              <div class="form-group col-md-12 mb-3">
+                <label for="" class="labelcupon"> Descripción:</label>
+                <textarea name="decripcion" id="" cols="50" rows="3" class="form-control"
+                  placeholder="Escribe descripción del cupon "></textarea>
+                <button type="submit" id="btnAgregar" class="btn btn-outline-info btn-block ">
+                  Agregar
+                </button>
+              </div>
+              </form>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+  </div>
 
 
+  <script src="./assets/js/fecha.js"></script>
 
   {{> footer}}
