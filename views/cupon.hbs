@@ -26,7 +26,7 @@
                                     <hr />
                                     <a href="" style="text-decoration: none;" class="cuponA"><img
                                             src="./assets/img/icons/MasUtilizados.png" alt="" />
-                                        <span class="cupon"> Cupones más utilizados</span></a>
+                                        <span class="cupon">Cupones más utilizados</span></a>
                                 </li>
                                 <hr />
                                 <li>
@@ -80,10 +80,9 @@
                         {{#each cupones}}
 
                         <tr>
-                            <td>{{@key}}</td>
-                            <td id="image"><img src="./assets/img/uni2.png" alt=""></td>
+                            <td> <img id="image" src="./assets/img/uber.png" alt=""> </td>
                             <td>{{this.titulo_cupon}}</td>
-                            <td>{{this.codigo}}</td>
+                            <td>{{this.decripcion}}</td>
                             <td>{{this.tipo_cupon}}</td>
                             <td> <button type="button" class="btn btn-outline-info" data-toggle="modal"
                                     data-target="#miModal{{@key}}">
@@ -108,7 +107,7 @@
                                 <div class="modal-body">
                                     <div id="contenedorImg">
 
-                                        <img id="imgModal" class="img-responsive" src="./assets/img/uni2.png" alt="" />
+                                        <img id="imgModal" class="img-responsive" src="./assets/img/uber.png" alt="" />
                                     </div>
                                     <p id="tituloCupon">
                                         {{this.titulo_cupon}}
@@ -136,7 +135,7 @@
 
         </section>
     </div>
-    
+
     <script src="./assets/js/CopiarCupon.js"></script>
 
     {{>footer}}
