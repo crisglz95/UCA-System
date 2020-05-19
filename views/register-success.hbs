@@ -1,0 +1,35 @@
+{{> header}}
+
+<body>
+    <div class="contenedor">
+        <div class="menu" id="menu">
+            <ul>
+                <li>
+                    <img src="./assets/img/empresas/inicio.png" alt="">
+                    <a href="/sistemaHome">Inicio</a>
+                </li>
+                <li>
+                    <img src="./assets/img/empresas/cupones.png" alt="">
+                    <a href="/sistemaCupones">Cupones</a>
+                </li>
+                <li>
+                    <img src="./assets/img/empresas/Donaciones.png" alt="">
+                    <a href="/sistemaDonaciones">Donaciones</a>
+                </li>
+            </ul>
+        </div>
+        <div class="contenido">
+            <button type="button" id="sidebarCollapse" class="btn" data-toggle="collapse">
+                <span class="navbar-toggler-icon"><i class="fa fa-list" aria-hidden="true"></i></span>
+            </button>
+            <div class="imagen">
+                <img src="./assets/img/confirmacion.webp" class="" style="width: 150px; height: 150px">
+            </div>
+            <h1>Registro Completo</h1>
+            <a href="{{enlace}}" class="btn btn-outline-info btn-sm mt-3">Regresar a Listado de {{boton}}</a>
+        </div>
+    </div>
+
+
+
+    {{> footer}}
