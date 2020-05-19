@@ -1,4 +1,5 @@
 {{> header}}
+<link rel="stylesheet" href="./assets/css/tableUca.css">
 
 <body>
     <div class="contenedor">
@@ -27,18 +28,21 @@
 
             <a href="formDonaciones" class="btn btn-outline-info btn-sm mt-3">Agregar Solicitud</a>
 
-            <table class="table mt-4">
-                <thead>
-                    <tr>
-                        <th>N°</th>
-                        <th>Nombre</th>
-                        <th>Cuenta</th>
-                        <th>Banco</th>
-                        <th>Descripcion</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {{#each donaciones}}
+
+            <div class="container">
+
+                <table class="table mt-4">
+                    <thead>
+                        <tr>
+                            <th>N°</th>
+                            <th>Nombre</th>
+                            <th>Cuenta</th>
+                            <th>Banco</th>
+                            <th>Descripcion</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each donaciones}}
                         <tr>
                             <td></td>
                             {{!-- <td id="image"><img src="./assets/img/uni2.png" alt=""></td> --}}
@@ -47,12 +51,15 @@
                             <td>{{this.banco}}</td>
                             <td>{{this.descripcion_donacion}}</td>
                         </tr>
-                    {{/each}}
-                </tbody>
-            </table>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+
         </div>
     </div>
 
 
+    <script src="./assets/js/tableUca.js"></script>
 
     {{> footer}}
