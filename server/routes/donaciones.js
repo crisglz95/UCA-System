@@ -53,7 +53,7 @@ app.post("/donaciones", verificaToken, function(req, res) {
 
     DONAR.save((err, donarDB) => {
         if (err) res.status(500).send({ message: `Error: ${err}` });
-        res.status(200).send({ DONAR: donarDB });
+        res.render('register-success', { DONAR: donarDB, enlace: '/sistemaDonaciones', boton: 'Donaciones' });
     });
 });
 
