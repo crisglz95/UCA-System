@@ -1,3 +1,73 @@
+@import url("https://fonts.googleapis.com/css?family=Oswald|Roboto+Condensed&display=swap");
+
+#contenedor_txt {
+  display: inline-block;
+  margin-top: 13%;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+#proximamente {
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-family: "Oswald", sans-serif;
+  color: white;
+  font-size: 55px;
+}
+
+#proximamente::before {
+  content: attr(data-text);
+  position: absolute;
+  width: 0%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border-right: 10px solid #f2f2f2;
+  background: linear-gradient(to right, #00034e, #039baf);
+  background-clip: text;
+  color: transparent;
+  -webkit-background-clip: text;
+  animation: type 3s steps(1) forwards infinite;
+}
+
+@keyframes type {
+  0% {
+    width: 0%;
+  }
+  10% {
+    width: 13%;
+  }
+  20% {
+    width: 26%;
+  }
+  30% {
+    width: 39%;
+  }
+  40% {
+    width: 51%;
+  }
+  50% {
+    width: 63%;
+  }
+  60% {
+    width: 76%;
+  }
+  70% {
+    width: 89%;
+  }
+  80% {
+    width: 96%;
+  }
+  90% {
+    width: 100%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
 .content {
   position: relative;
   width: 100%;
@@ -13,9 +83,9 @@
   position: absolute;
   height: 60vh;
   width: 60vw;
-  top: 20vh;
+  top: 0vh;
   bottom: 0;
-  left: 45%;
+  left: 20%;
   right: 0;
   margin: auto;
 }
