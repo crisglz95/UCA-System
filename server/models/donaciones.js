@@ -6,8 +6,8 @@ let donacionSchema = new Schema({
     descripcion_donacion: String,
     cuenta_bancaria: Number,
     banco: String,
-    fecha_inicio: Date,
-    fecha_final: Date,
+    fecha_inicio: String,
+    fecha_final: String,
     imagen: String,
     empresa: { type: Schema.Types.ObjectId, ref: 'Formulario_Empresa' }
 });

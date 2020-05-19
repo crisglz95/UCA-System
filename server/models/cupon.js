@@ -16,9 +16,9 @@ let cuponSchema = new Schema({
     },
     condiciones: String,
     empresa: String,
-    fecha_inicio: Date,
-    fecha_final: Date,
-    // imagen_cupon: String,
+    fecha_inicio: String,
+    fecha_final: String,
+    imagen_cupon: String,
     empresa: { type: Schema.Types.ObjectId, ref: 'Formulario_Empresa' }
 });
 

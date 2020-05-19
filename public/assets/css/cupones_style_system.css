@@ -5,6 +5,12 @@
   padding: 0;
 }
 
+#bodcupon {
+  width: 100%;
+  height: 90%;
+  /* overflow-y: hidden; */
+}
+
 /* TITULO INICIO */
 #cuponesTitulo {
   width: 80%;

@@ -32,9 +32,10 @@
                     <thead>
                         <tr>
                             <th>N°</th>
-                            {{!-- <th>Nombre</th> --}}
+                            <th>Titulo</th>
                             <th>Descripcion</th>
                             <th>Codigo</th>
+                            <th>Tipo de cupon</th>
                             <th>Operaciones</th>
                         </tr>
                     </thead>
@@ -44,8 +45,13 @@
                             <td></td>
                             {{!-- <td id="image"><img src="./assets/img/uni2.png" alt=""></td> --}}
                             <td>{{this.titulo_cupon}}</td>
+                            <td>{{this.decripcion}}</td>
                             <td>{{this.codigo}}</td>
                             <td>{{this.tipo_cupon}}</td>
+                            <td>
+                                <a href=""><img style="width: 30px;" src="./assets/img/icons/delate.png" alt=""></a>
+                                <a href="" type="button" class="btn btn-outline-warning">Editar</a>
+                            </td>
                         </tr>
                         {{/each}}
                     </tbody>
