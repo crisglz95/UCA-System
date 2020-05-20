@@ -37,9 +37,19 @@ app.post('/login', (req, res) => {
             });
         }
 
+        // if (empresaDB.status === false) {
+        //     return res.status(400).json({
+        //         ok: false,
+        //         err: true,
+        //         message: 'Empresa no validada'
+        //     })
+        // }
+
         let token = jwt.sign({
             empresa: empresaDB
         }, process.env.SEED, { expiresIn: process.env.CADUCIDAD_TOKEN });
+
+        console.log(empresaDB);
 
         res.cookie('token', token, { httpOnly: true });
 

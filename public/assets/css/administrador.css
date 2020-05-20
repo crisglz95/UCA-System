@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald&display=swap');
+.contenedor {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+
+.navbar-brand {
+    color: #fff!important;
+    font-family: 'Oswald', sans-serif;
+    font-size: 24px;
+}
+
+.contenedor .menu {
+    height: 100%;
+    width: 20%;
+}
+
+.contenedor .menu .navbar {
+    height: 100%;
+    flex-direction: column;
+    background: #00034E;
+}
+
+.contenedor .menu .navbar .navbar-nav {
+    flex-direction: column;
+}
+
+.contenedor .menu .navbar .navbar-nav .nav-link {
+    color: #fff;
+    font-family: 'Oswald', sans-serif;
+    font-size: 18px;
+}
+
+.contenedor .contenido {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 80%;
+}
+
+.contenedor .contenido .titulo {
+    margin: 0;
+    padding: 0;
+    height: 20%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor .contenido .tipo {
+    margin: 0;
+    padding: 0;
+    height: 10%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor .contenido .tabla {
+    margin: 0;
+    padding: 15px;
+    height: 70%;
+    width: 100%;
+}
+
+.btn {
+    border-radius: 90px;
+}
+
+@media (min-width: 300px) and (max-width: 500px) {
+    .contenedor {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+    .contenedor .menu {
+        height: auto;
+        width: 100%;
+    }
+    .contenedor .menu .navbar {
+        height: auto;
+        width: 100vw;
+        flex-direction: row;
+        background: #00034E;
+        z-index: 1000;
+    }
+    .contenedor .menu .navbar .navbar-nav {
+        flex-direction: column;
+    }
+    .contenedor .contenido {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+    }
+    .contenedor .contenido {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 100%;
+    }
+}

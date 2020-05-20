@@ -14,6 +14,14 @@ app.get("/login", (req, res) => {
     res.render("login", {});
 });
 
+app.get('/registro', (req, res) => {
+    res.render('register', {})
+});
+
+app.get('/lista-empresa', (req, res) => {
+    res.render('lista-empresas', {})
+});
+
 app.get("/consultoria_y_capacitacion", (req, res) => {
     res.render("consultoria_y_capacitacion", {});
 });
