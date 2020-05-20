@@ -39,6 +39,7 @@
                             <th>Cuenta</th>
                             <th>Banco</th>
                             <th>Descripcion</th>
+                            <th>Operaciones</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -47,9 +48,15 @@
                             <td></td>
                             {{!-- <td id="image"><img src="./assets/img/uni2.png" alt=""></td> --}}
                             <td>{{this.titulo_donacion}}</td>
+                            <td>{{this.descripcion_donacion}}</td>
                             <td>{{this.cuenta_bancaria}}</td>
                             <td>{{this.banco}}</td>
-                            <td>{{this.descripcion_donacion}}</td>
+                            <td class="text-center">
+                                <a href=""><img style="width: 30px;" src="./assets/img/icons/delate.png" alt=""></a>
+                                <a href="" type="button"> <img style="width:30px;" src="./assets/img/icons/edit.png"
+                                        alt=""></a>
+                                <a href=""><img style="width: 30px;" src="./assets/img/icons/ver.png" alt=""></a>
+                            </td>
                         </tr>
                         {{/each}}
                     </tbody>
