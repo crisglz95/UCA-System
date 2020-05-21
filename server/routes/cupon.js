@@ -37,7 +37,6 @@ app.get("/CuponesDescuentos", function (req, res) {
   });
 });
 
-
 // LISTAR CUPONES PROMOCIONES
 app.get("/CuponesPromociones", function (req, res) {
   cupon.find({ tipo_cupon: "promociones" }).exec((err, cupones) => {
@@ -53,6 +52,23 @@ app.get("/CuponesPromociones", function (req, res) {
     });
   });
 });
+
+// LISTAR CUPONES PARA ESTUDIANTES
+app.get("/CuponesEstudiantes", function (req, res) {
+  cupon.find({ valido_persona: "estudiantes" }).exec((err, cupones) => {
+    if (err) {
+      return res.status(400).json({
+        ok: false,
+        err,
+      });
+    }
+    res.render("cupon", {
+      cupones,
+    });
+  });
+});
+
+
 
 //LISTAR CUPONES EMPRESA
 app.get("/listarCuponesEmpresa", function (req, res) {
