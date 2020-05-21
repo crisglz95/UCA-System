@@ -68,7 +68,20 @@ app.get("/CuponesEstudiantes", function (req, res) {
   });
 });
 
-
+// LISTAR CUPONES PARA ENVIOS GRATIS
+app.get("/CuponesEnviosGratis", function (req, res) {
+  cupon.find({ tipo_cupon: "envios" }).exec((err, cupones) => {
+    if (err) {
+      return res.status(400).json({
+        ok: false,
+        err,
+      });
+    }
+    res.render("cupon", {
+      cupones,
+    });
+  });
+});
 
 //LISTAR CUPONES EMPRESA
 app.get("/listarCuponesEmpresa", function (req, res) {
