@@ -1,5 +1,8 @@
 {{>header}}
 <link rel="stylesheet" href="./assets/css/cupones_style_system.css">
+{{!-- paginar --}}
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
+
 
 <body>
     {{>navbar}}
@@ -75,24 +78,28 @@
             <div class="container">
 
                 <div class="table-responsive-sm">
-                    <table class="table">
+                    <table class="table" id="table_id">
+                        <thead>
+                        </thead>
+                        <tbody>
 
-                        {{#each cupones}}
+                            {{#each cupones}}
 
-                        <tr>
-                            <td> <img id="image" src="./assets/img/uber.png" alt=""> </td>
-                            <td>{{this.titulo_cupon}}</td>
-                            <td>{{this.decripcion}}</td>
-                            <td>{{this.tipo_cupon}}</td>
-                            <td> <button type="button" class="btn btn-outline-info" data-toggle="modal"
-                                    data-target="#miModal{{@key}}">
-                                    Ver
-                                </button></td>
-                        </tr>
-                        <!-- MODAL -->
+                            <tr>
+                                <td> <img id="image" src="./assets/img/uber.png" alt=""> </td>
+                                <td>{{this.titulo_cupon}}</td>
+                                <td>{{this.decripcion}}</td>
+                                <td>{{this.tipo_cupon}}</td>
+                                <td> <button type="button" class="btn btn-outline-info" data-toggle="modal"
+                                        data-target="#miModal{{@key}}">
+                                        Ver
+                                    </button></td>
+                            </tr>
+                            <!-- MODAL -->
 
 
-                        {{/each}}
+                            {{/each}}
+                        </tbody>
                     </table>
                     {{#each cupones}}
                     <div class="modal fade" id="miModal{{@key}}" tabindex="-1" role="dialog"
@@ -137,5 +144,6 @@
     </div>
 
     <script src="./assets/js/CopiarCupon.js"></script>
+
 
     {{>footer}}
