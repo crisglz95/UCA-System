@@ -6,8 +6,9 @@ const bcrypt = require("bcrypt");
 
 const app = express();
 
-app.get("/empresa", verificaToken, function (req, res) {
+app.get("/empresa", function (req, res) {
   console.log(req.empresa);
+  
   let desde = req.query.desde || 0;
   desde = Number(desde);
 
@@ -119,9 +120,6 @@ app.put("/empresa/:id", function (req, res) {
   });
 });
 
-
-
-
 // HOTELERIA
 app.get("/Hoteleria", function (req, res) {
   Empresa.find({ giro_empresarial: "Hoteleria" }).exec((err, empresaDB) => {
@@ -131,13 +129,11 @@ app.get("/Hoteleria", function (req, res) {
         err,
       });
     }
-    res.json({
-      ok: true,
+    res.render("home_empresas", {
       empresa: empresaDB,
     });
   });
 });
-
 
 //   Restaurantes/Servicios de comida
 app.get("/Restaurantes", function (req, res) {
@@ -149,14 +145,12 @@ app.get("/Restaurantes", function (req, res) {
           err,
         });
       }
-      res.json({
-        ok: true,
+      res.render("home_empresas", {
         empresa: empresaDB,
       });
     }
   );
 });
-
 
 // Consultoria Empresarial
 app.get("/ConsultoriaEmpresarial", function (req, res) {
@@ -168,189 +162,146 @@ app.get("/ConsultoriaEmpresarial", function (req, res) {
           err,
         });
       }
-      res.json({
-        ok: true,
+      res.render("home_empresas", {
         empresa: empresaDB,
       });
     }
   );
 });
-
 
 // Medicina
 app.get("/Medicina", function (req, res) {
-  Empresa.find({ giro_empresarial: "Medicina" }).exec(
-    (err, empresaDB) => {
-      if (err) {
-        return res.status(400).json({
-          ok: false,
-          err,
-        });
-      }
-      res.json({
-        ok: true,
-        empresa: empresaDB,
+  Empresa.find({ giro_empresarial: "Medicina" }).exec((err, empresaDB) => {
+    if (err) {
+      return res.status(400).json({
+        ok: false,
+        err,
       });
     }
-  );
+    res.render("home_empresas", {
+      empresa: empresaDB,
+    });
+  });
 });
-
 
 // Industria
 app.get("/Industria", function (req, res) {
-  Empresa.find({ giro_empresarial: "Industria" }).exec(
-    (err, empresaDB) => {
-      if (err) {
-        return res.status(400).json({
-          ok: false,
-          err,
-        });
-      }
-      res.json({
-        ok: true,
-        empresa: empresaDB,
+  Empresa.find({ giro_empresarial: "Industria" }).exec((err, empresaDB) => {
+    if (err) {
+      return res.status(400).json({
+        ok: false,
+        err,
       });
     }
-  );
+    res.render("home_empresas", {
+      empresa: empresaDB,
+    });
+  });
 });
-
 
 // Construcción
-app.get("/Construcción", function (req, res) {
-  Empresa.find({ giro_empresarial: "Construcción" }).exec(
-    (err, empresaDB) => {
-      if (err) {
-        return res.status(400).json({
-          ok: false,
-          err,
-        });
-      }
-      res.json({
-        ok: true,
-        empresa: empresaDB,
+app.get("/Construccion", function (req, res) {
+  Empresa.find({ giro_empresarial: "Construccion" }).exec((err, empresaDB) => {
+    if (err) {
+      return res.status(400).json({
+        ok: false,
+        err,
       });
     }
-  );
+    res.render("home_empresas", {
+      empresa: empresaDB,
+    });
+  });
 });
-
 
 // Servicios
 app.get("/Servicios", function (req, res) {
-  Empresa.find({ giro_empresarial: "Servicios" }).exec(
-    (err, empresaDB) => {
-      if (err) {
-        return res.status(400).json({
-          ok: false,
-          err,
-        });
-      }
-      res.json({
-        ok: true,
-        empresa: empresaDB,
+  Empresa.find({ giro_empresarial: "Servicios" }).exec((err, empresaDB) => {
+    if (err) {
+      return res.status(400).json({
+        ok: false,
+        err,
       });
     }
-  );
+    res.render("home_empresas", {
+      empresa: empresaDB,
+    });
+  });
 });
-
 
 // Comercio
 app.get("/Comercio", function (req, res) {
-  Empresa.find({ giro_empresarial: "Comercio" }).exec(
-    (err, empresaDB) => {
-      if (err) {
-        return res.status(400).json({
-          ok: false,
-          err,
-        });
-      }
-      res.json({
-        ok: true,
-        empresa: empresaDB,
+  Empresa.find({ giro_empresarial: "Comercio" }).exec((err, empresaDB) => {
+    if (err) {
+      return res.status(400).json({
+        ok: false,
+        err,
       });
     }
-  );
+    res.render("home_empresas", {
+      empresa: empresaDB,
+    });
+  });
 });
-
 
 // Automoviles
 app.get("/Automoviles", function (req, res) {
-  Empresa.find({ giro_empresarial: "Automoviles" }).exec(
-    (err, empresaDB) => {
-      if (err) {
-        return res.status(400).json({
-          ok: false,
-          err,
-        });
-      }
-      res.json({
-        ok: true,
-        empresa: empresaDB,
+  Empresa.find({ giro_empresarial: "Automoviles" }).exec((err, empresaDB) => {
+    if (err) {
+      return res.status(400).json({
+        ok: false,
+        err,
       });
     }
-  );
+    res.render("home_empresas", {
+      empresa: empresaDB,
+    });
+  });
 });
-
 
 // Veterinaria
 app.get("/Veterinaria", function (req, res) {
-  Empresa.find({ giro_empresarial: "Veterinaria" }).exec(
-    (err, empresaDB) => {
-      if (err) {
-        return res.status(400).json({
-          ok: false,
-          err,
-        });
-      }
-      res.json({
-        ok: true,
-        empresa: empresaDB,
+  Empresa.find({ giro_empresarial: "Veterinaria" }).exec((err, empresaDB) => {
+    if (err) {
+      return res.status(400).json({
+        ok: false,
+        err,
       });
     }
-  );
+    res.render("home_empresas", {
+      empresa: empresaDB,
+    });
+  });
 });
-
 
 // Tecnologia
 app.get("/Tecnologia", function (req, res) {
-  Empresa.find({ giro_empresarial: "Tecnologia" }).exec(
-    (err, empresaDB) => {
-      if (err) {
-        return res.status(400).json({
-          ok: false,
-          err,
-        });
-      }
-      res.json({
-        ok: true,
-        empresa: empresaDB,
+  Empresa.find({ giro_empresarial: "Tecnologia" }).exec((err, empresaDB) => {
+    if (err) {
+      return res.status(400).json({
+        ok: false,
+        err,
       });
     }
-  );
+    res.render("home_empresas", {
+      empresa: empresaDB,
+    });
+  });
 });
-
 
 // Otros
 app.get("/Otros", function (req, res) {
-  Empresa.find({ giro_empresarial: "Otros" }).exec(
-    (err, empresaDB) => {
-      if (err) {
-        return res.status(400).json({
-          ok: false,
-          err,
-        });
-      }
-      res.json({
-        ok: true,
-        empresa: empresaDB,
+  Empresa.find({ giro_empresarial: "Otros" }).exec((err, empresaDB) => {
+    if (err) {
+      return res.status(400).json({
+        ok: false,
+        err,
       });
     }
-  );
+    res.render("home_empresas", {
+      empresa: empresaDB,
+    });
+  });
 });
-
-
-
-
-
-
 
 module.exports = app;

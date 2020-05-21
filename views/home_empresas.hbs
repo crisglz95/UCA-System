@@ -1,0 +1,93 @@
+{{>header}}
+<link rel="stylesheet" href="./assets/css/cupones_style_system.css">
+{{!-- paginar --}}
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
+
+
+<body>
+    {{>navbar}}
+
+
+    <div id="bodcupon">
+        <div id="cuponesTitulo">
+            <span id="letrasCupones">Empresa</span>
+            <span id="LA1"></span>
+            <span id="LA2"></span>
+        </div>
+
+
+        <section id="cupons" class="mb-5">
+            <div class="container">
+
+                <div class="table-responsive-sm">
+                    <table class="table" id="table_id">
+                        <thead>
+                        </thead>
+                        <tbody>
+
+                            {{#each empresa}}
+
+                            <tr>
+                                <td> <img id="image" src="./assets/img/uber.png" alt=""> </td>
+                                <td>{{this.nombre_empresa}}</td>
+                                <td>{{this.descripcion_empresa}}</td>
+                                <td>{{this.tel}}</td>
+                                <td> <button type="button" class="btn btn-outline-info" data-toggle="modal"
+                                        data-target="#miModal{{@key}}">
+                                        Ver
+                                    </button></td>
+                            </tr>
+                            <!-- MODAL -->
+
+
+                            {{/each}}
+                        </tbody>
+                    </table>
+                    {{#each cupones}}
+                    <div class="modal fade" id="miModal{{@key}}" tabindex="-1" role="dialog"
+                        aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true" class="text-center"> &times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div id="contenedorImg">
+
+                                        <img id="imgModal" class="img-responsive" src="./assets/img/uber.png" alt="" />
+                                    </div>
+                                    <p id="tituloCupon">
+                                        {{this.nombre_empresa}}
+                                    </p>
+
+                                    <p>
+                                        Telefono:
+                                        <button id="btnCopy" style="text-decoration: none;" type="button"
+                                            class="btn btn-link">
+                                            <b> <span id="text" class="codigo">{{this.tel}}</span></b>
+                                        </button>
+                                    </p>
+                                    <p class="TxtMInf">Descripción: {{this.descripcion_empresa}}</p>
+                                    <p class="TxtMInf">calle: {{this.calle}} {{this.numero_dir}}</p>
+                                    <p class="TxtMInf">CP:{{this.cp}}</p>
+                                    <p class="TxtMInf">Estado: {{this.estado}}</p>
+                                    <p class="TxtMInf">Municipio: {{this.municipio}}</p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {{/each}}
+                </div>
+            </div>
+
+        </section>
+    </div>
+
+    <script src="./assets/js/CopiarCupon.js"></script>
+
+
+    {{>footer}}
