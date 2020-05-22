@@ -3,6 +3,7 @@ const app = express();
 
 const cupon = require("../models/cupon");
 const donacion = require("../models/donaciones");
+const Empresa = require("../models/empresa");
 
 const { verificaToken } = require('../middlewares/autenticacion');
 
@@ -18,8 +19,34 @@ app.get('/registro', (req, res) => {
     res.render('register', {})
 });
 
+app.get('/administrador-home', (req, res) => {
+    res.render('admin-sys', {})
+});
+
 app.get('/lista-empresa', (req, res) => {
-    res.render('lista-empresas', {})
+    Empresa.find({ status: false, administrador: false }).exec((err, EmpresaDB) => {
+        if (err) {
+            return res.status(400).json({
+                ok: false,
+                err
+            });
+        }
+        console.log(EmpresaDB);
+        res.render('lista-empresas', { empresa: EmpresaDB });
+    });
+});
+
+app.get('/lista-empresa-activas', (req, res) => {
+    Empresa.find({ status: true, administrador: false | undefined }).exec((err, EmpresaDB) => {
+        if (err) {
+            return res.status(400).json({
+                ok: false,
+                err
+            });
+        }
+        console.log(EmpresaDB);
+        res.render('lista-empresas', { empresa: EmpresaDB });
+    });
 });
 
 app.get("/consultoria_y_capacitacion", (req, res) => {

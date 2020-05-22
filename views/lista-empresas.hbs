@@ -1,4 +1,5 @@
 {{> header}}
+<link rel="stylesheet" href="./assets/css/administrador.css">
 <body>
 
 <div class="contenedor">
@@ -30,8 +31,10 @@
             </div>
             <div class="tipo">
                 <div class="btn-group" role="group" aria-label="Basic example">
-                    <button type="button" class="btn btn-outline-danger">Inactivas</button>
-                    <button type="button" class="btn btn-outline-success">Activas</button>
+                    
+                    <button type="button" class="btn btn-outline-danger"><a href="/lista-empresa">Inactivas</a></button>
+                    
+                    <button type="button" class="btn btn-outline-success"><a href="/lista-empresa-activas">Activas</a></button>
                 </div>
             </div>
             <div class="tabla">
@@ -39,30 +42,20 @@
                     <thead>
                         <tr>
                             <th scope="col">#</th>
-                            <th scope="col">First</th>
-                            <th scope="col">Last</th>
-                            <th scope="col">Handle</th>
+                            <th scope="col">Empresa</th>
+                            <th scope="col">Titular</th>
+                            <th scope="col">Correo Electronico</th>
                         </tr>
                     </thead>
                     <tbody>
+                        {{#each empresa}}
                         <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
+                            <th scope="row"></th>
+                            <td>{{this.nombre_empresa}}</td>
+                            <td>{{this.nombre_completo}}</td>
+                            <td>{{this.correo}}</td>
                         </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Larry</td>
-                            <td>the Bird</td>
-                            <td>@twitter</td>
-                        </tr>
+                        {{/each}}
                     </tbody>
                 </table>
             </div>
