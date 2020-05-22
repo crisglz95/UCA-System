@@ -27,40 +27,9 @@
 
         <div class="contenido">
             <div class="titulo">
-                <h1>Listado de Empresas</h1>
-            </div>
-            <div class="tipo">
-                <div class="btn-group" role="group" aria-label="Basic example">
-                    
-                    <button type="button" class="btn btn-outline-danger"><a href="/lista-empresa">Inactivas</a></button>
-                    
-                    <button type="button" class="btn btn-outline-success"><a href="/lista-empresa-activas">Activas</a></button>
-                </div>
-            </div>
-            <div class="tabla">
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Empresa</th>
-                            <th scope="col">Titular</th>
-                            <th scope="col">Correo Electronico</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {{#each empresa}}
-                        <tr>
-                            <th scope="row"><a href="/activarEmpresa">Ir</a></th>
-                            <td>{{this.nombre_empresa}}</td>
-                            <td>{{this.nombre_completo}}</td>
-                            <td>{{this.correo}}</td>
-                        </tr>
-                        {{/each}}
-                    </tbody>
-                </table>
+                <h1>Edicion de Empresas</h1>
             </div>
         </div>
     </div>
-</body>
-
 {{>footer}}
+</body>
