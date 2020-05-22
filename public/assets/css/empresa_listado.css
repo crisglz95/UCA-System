@@ -1,0 +1,186 @@
+@import url("https://fonts.googleapis.com/css?family=Oswald|Roboto+Condensed&display=swap");
+
+#empresa {
+  width: 100%;
+  /* height: 110vh; */
+  margin-top: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#empresaTitulo {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 9%;
+  margin-bottom: -7%;
+}
+
+#LA1E {
+  display: block;
+  width: 300px;
+  height: 4px;
+  background: #00034e;
+  margin-top: 2%;
+  margin-left: -13%;
+}
+
+#LA2E {
+  display: block;
+  width: 200px;
+  height: 4px;
+  background: #039baf;
+  margin-top: 4%;
+  margin-left: -16.5%;
+}
+
+#letrasCupones2 {
+  font-size: 33px;
+  font-family: "Oswald", sans-serif;
+  align-items: center;
+  margin-top: -2%;
+}
+
+/* IPAD PRO */
+@media (max-width: 1024px) {
+  #empresaTitulo {
+    margin-top: 9%;
+    margin-bottom: -7%;
+  }
+  #letrasCupones {
+    font-size: 42px;
+    margin-top: 0%;
+    margin-left: 10%;
+  }
+  #LA1E {
+    margin-top: 7%;
+    margin-left: -20%;
+  }
+
+  #LA2E {
+    margin-top: 10%;
+    margin-left: -24%;
+  }
+
+  #letrasCupones2 {
+    font-size: 42px;
+    margin-top: 0%;
+  }
+}
+
+/* IPAD */
+@media (max-width: 768px) {
+  #empresaTitulo {
+    margin-top: 9%;
+    margin-bottom: -7%;
+  }
+  #letrasCupones2 {
+    font-size: 42px;
+    margin-top: 0%;
+    margin-left: 6%;
+  }
+  #LA1E {
+    margin-top: 9%;
+    margin-left: -26%;
+  }
+
+  #LA2E {
+    margin-top: 12%;
+    margin-left: -32%;
+  }
+}
+
+@media (max-width: 414px) {
+  #empresaTitulo {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 12%;
+    margin-bottom: -1%;
+  }
+
+  #letrasCupones2 {
+    font-size: 30px;
+    margin-top: 18%;
+    margin-left: 30%;
+  }
+  #LA1E {
+    width: 200px;
+    margin-top: 32%;
+    margin-left: -45%;
+  }
+
+  #LA2E {
+    width: 100px;
+    margin-top: 38%;
+    margin-left: -45%;
+  }
+}
+
+@media (max-width: 375px) {
+  #empresaTitulo {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 12%;
+    margin-bottom: -1%;
+  }
+
+  #letrasCupones2 {
+    font-size: 30px;
+    margin-top: 20%;
+    margin-left: 28%;
+  }
+  #LA1E {
+    width: 200px;
+    margin-top: 34%;
+    margin-left: -48%;
+  }
+
+  #LA2E {
+    width: 100px;
+    margin-top: 40%;
+    margin-left: -49%;
+  }
+}
+
+@media (max-width: 360px) {
+  #letrasCupones2 {
+    font-size: 25px;
+    margin-top: 20%;
+    margin-left: 30%;
+  }
+
+  #LA1E {
+    width: 180px;
+    margin-top: 33%;
+    margin-left: -45%;
+  }
+  #LA2E {
+    width: 100px;
+    margin-top: 39%;
+    margin-left: -48%;
+  }
+}
+
+@media (max-width: 320px) {
+  #letrasCupones2 {
+    font-size: 25px;
+    margin-top: 20%;
+    margin-left: 35%;
+  }
+  #LA1E {
+    width: 180px;
+    margin-top: 36%;
+    margin-left: -51%;
+  }
+  #LA2E {
+    width: 100px;
+    margin-top: 43%;
+    margin-left: -53%;
+  }
+}

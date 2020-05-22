@@ -1,5 +1,6 @@
 {{>header}}
 <link rel="stylesheet" href="./assets/css/cupones_style_system.css">
+<link rel="stylesheet" href="./assets/css/empresa_listado.css">
 {{!-- paginar --}}
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
 
@@ -7,16 +8,15 @@
 <body>
     {{>navbar}}
 
-
     <div id="bodcupon">
-        <div id="cuponesTitulo">
-            <span id="letrasCupones">Empresa</span>
-            <span id="LA1"></span>
-            <span id="LA2"></span>
+        <div id="empresaTitulo">
+            <span id="letrasCupones2">Empresa</span>
+            <span id="LA1E"></span>
+            <span id="LA2E"></span>
         </div>
 
 
-        <section id="cupons" class="mb-5">
+        <section id="empresa" class="mb-5">
             <div class="container">
 
                 <div class="table-responsive-sm">
@@ -43,7 +43,7 @@
                             {{/each}}
                         </tbody>
                     </table>
-                    {{#each cupones}}
+                    {{#each empresa}}
                     <div class="modal fade" id="miModal{{@key}}" tabindex="-1" role="dialog"
                         aria-labelledby="myModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
@@ -86,7 +86,7 @@
 
         </section>
     </div>
-
+</div>
     <script src="./assets/js/CopiarCupon.js"></script>
 
 

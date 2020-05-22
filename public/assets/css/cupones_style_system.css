@@ -11,6 +11,7 @@
   overflow-y: scroll;
 }
 
+
 #image {
   display: block;
   width: 100px;
@@ -370,7 +371,7 @@ td img {
 
 @media (max-width: 320px) {
   #cuponesTitulo {
-    margin-bottom: 10%;
+    margin-bottom: 3%;
   }
   #CuponesMenu {
     width: 100%;
