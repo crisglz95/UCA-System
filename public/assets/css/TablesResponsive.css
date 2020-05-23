@@ -1,0 +1,20 @@
+#T {
+  font-weight: bolder;
+}
+
+@media (max-width: 414px) {
+  table {
+    width: 1000px;
+    word-wrap: break-word;
+  }
+
+  #D {
+    display: flex;
+    width: 250px !important;
+    /* para que las palabras no se corten */
+  }
+  #T {
+    display: block;
+    width: 250px !important;
+  }
+}

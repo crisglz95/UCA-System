@@ -1,7 +1,6 @@
 {{>header}}
 <link rel="stylesheet" href="./assets/css/cupones_style_system.css">
-{{!-- paginar --}}
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
+<link rel="stylesheet" href="./assets/css/TablesResponsive.css">
 
 
 <body>
@@ -87,9 +86,9 @@
 
                             <tr>
                                 <td> <img id="image" src="./assets/img/uber.png" alt=""> </td>
-                                <td>{{this.titulo_cupon}}</td>
-                                <td>{{this.decripcion}}</td>
-                                <td>{{this.tipo_cupon}}</td>
+                                <td id="T">{{this.titulo_cupon}}</td>
+                                <td id="D">{{this.decripcion}}</td>
+
                                 <td> <button type="button" class="btn btn-outline-info" data-toggle="modal"
                                         data-target="#miModal{{@key}}">
                                         Ver
@@ -130,7 +129,8 @@
                                     <p class="TxtMInf">Compra minima: {{this.minimo_compra}}</p>
                                     <p class="TxtMInf">Condiciones: {{this.condiciones}}</p>
                                     <p class="TxtMInf">Valido para: {{this.valido_persona}}</p>
-                                    <p class="TxtMInf">Descripcion:{{this.decripcion}}</p>
+                                    <p class="TxtMInf">Tipo de cupón: {{this.tipo_cupon}}</p>
+                                    <p class="TxtMInf">Descripcion: {{this.decripcion}}</p>
                                     <p class="TxtMInf">Fecha vencimiento {{this.fecha_final}}</p>
                                 </div>
                             </div>
