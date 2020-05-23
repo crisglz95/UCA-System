@@ -3,9 +3,9 @@
 #contenedor_txt {
   display: inline-block;
   margin-top: 13%;
-display: flex;
-justify-content: center;
-align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #proximamente {
@@ -268,4 +268,76 @@ path#f3-l9 {
 #laptop__code {
   transform: rotateX(-37deg) rotateY(-46deg) rotateZ(-23deg) translateX(8px)
     translateY(20px) translateZ(-50px);
+}
+
+@media (max-width: 1024px) {
+  #contenedor_txt {
+    margin-top: 30%;
+  }
+  #cat {
+    margin-top: -20%;
+  }
+}
+
+@media (max-width: 768px) {
+  #contenedor_txt {
+    margin-top: 35%;
+  }
+  #cat {
+    margin-top: -25%;
+  }
+
+  #bongo-cat {
+    position: absolute;
+    height: 80vh;
+    width: 90vw;
+  }
+}
+
+@media (max-width: 414px) {
+  #contenedor_txt {
+    margin-top: 35%;
+  }
+  #cat {
+    margin-top: -25%;
+  }
+
+  #bongo-cat {
+    position: absolute;
+    height: 80vh;
+    width: 90vw;
+  }
+  #proximamente {
+    font-size: 50px;
+  }
+}
+
+@media (max-width: 375px) {
+  #contenedor_txt {
+    margin-top: 60%;
+  }
+  #cat {
+    margin-top: -30%;
+  }
+  #proximamente {
+    font-size: 50px;
+  }
+}
+
+@media (max-width: 375px) {
+  #contenedor_txt {
+    margin-top: 40%;
+  }
+  #cat {
+    margin-top: -30%;
+    margin-left: -20%;
+  }
+  #bongo-cat {
+    position: absolute;
+    height: 80vh;
+    width: 70vw;
+  }
+  #proximamente {
+    font-size: 40px;
+  }
 }
