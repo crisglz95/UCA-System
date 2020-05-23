@@ -36,35 +36,42 @@ app.get("/empresa", function(req, res) {
         });
 });
 
-app.get("/activarEmpresa", function(req, res) {
-    //let id = req.params.id;
-    res.render('acept-empresa', {
-        ok: true,
-        //empresa: empresaDB
-    });
+app.get("/activarEmpresa:id", verificaToken, function(req, res) {
+    // let empresa = req.body;
+    // console.log(empresa);
+    let id = req.params.id;
+    id = id.substr(1, id.length - 1);
 
-    // Empresa.findById(id, (err, empresaDB) => {
-    //     if (err) {
-    //         return res.status(500).json({
-    //             ok: false,
-    //             err
-    //         });
-    //     }
 
-    //     if (!empresaDB) {
-    //         return res.status(400).json({
-    //             ok: false,
-    //             err: {
-    //                 message: `Id no encontrado`
-    //             }
-    //         });
-    //     }
-
-    //     res.render('acept-empresa', {
-    //         ok: true,
-    //         empresa: empresaDB
-    //     });
+    // res.render('acept-empresa', {
+    //     ok: true,
+    //     //empresa: empresaDB
     // });
+
+    Empresa.findById(id, (err, empresaDB) => {
+        if (err) {
+            return res.status(500).json({
+                ok: false,
+                err
+            });
+        }
+
+        if (!empresaDB) {
+            return res.status(400).json({
+                ok: false,
+                err: {
+                    message: `Id no encontrado`
+                }
+            });
+        }
+
+        console.log(empresaDB);
+
+        res.render('acept-empresa', {
+            ok: true,
+            empresa: empresaDB
+        });
+    });
 });
 
 app.get("/empresaActiva", verificaToken, function(req, res) {
@@ -132,11 +139,14 @@ app.post("/empresa", function(req, res) {
     });
 });
 
-app.put("/empresa/:id", function(req, res) {
+app.post("/empresa:id", verificaToken, function(req, res) {
     let id = req.params.id;
+    id = id.substr(1, id.length - 1);
     let body = req.body;
 
-    Empresa.findById(id, body, { new: true }, (err, empresaDB) => {
+    body.status = !body.status;
+
+    Empresa.findByIdAndUpdate(id, body, { new: true }, (err, empresaDB) => {
         if (err) {
             return res.status(400).json({
                 ok: false,

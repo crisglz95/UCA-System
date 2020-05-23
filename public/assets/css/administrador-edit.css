@@ -40,14 +40,17 @@
     font-size: 18px;
 }
 
-.contenedor .contenido {
+.contenedor .contenido-formulario {
     margin: 0;
     padding: 0;
     height: 100%;
     width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.contenedor .contenido .titulo {
+.contenedor .contenido-formulario .titulo {
     margin: 0;
     padding: 0;
     height: 20%;
@@ -57,25 +60,17 @@
     align-items: center;
 }
 
-.contenedor .contenido .tipo {
+.contenedor .contenido-formulario .formulario {
     margin: 0;
     padding: 0;
-    height: 10%;
+    height: 80%;
+    width: 75%;
+    background: #000;
+}
+
+.contenedor .contenido-formulario .formulario .doble-campo {
     width: 100%;
     display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.contenedor .contenido .tabla {
-    margin: 0;
-    padding: 15px;
-    height: 70%;
-    width: 100%;
-}
-
-.btn {
-    border-radius: 90px;
 }
 
 @media (min-width: 300px) and (max-width: 500px) {
