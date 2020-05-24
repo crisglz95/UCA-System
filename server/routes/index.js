@@ -16,6 +16,11 @@ app.get("/", (req, res) => {
     res.render("home", {});
 });
 
+// app.get("/registro-completo", (req, res) => {
+//     res.render("register-complete", {});
+// });
+
+
 // app.get("/company", (req, res) => {
 //     res.render("company", {});
 // });

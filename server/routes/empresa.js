@@ -132,9 +132,13 @@ app.post("/empresa", function(req, res) {
             });
         }
 
-        res.json({
+        // res.json({
+        //     ok: true,
+        //     empresaDB,
+        // });
+        res.render("register-complete", {
             ok: true,
-            empresaDB,
+            empresaDB
         });
     });
 });

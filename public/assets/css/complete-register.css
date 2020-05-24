@@ -1,0 +1,23 @@
+.registro-completo {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.registro-completo .imagen {
+    width: 100%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.registro-completo .imagen img {
+    width: 25%;
+    height: 40%;
+}
