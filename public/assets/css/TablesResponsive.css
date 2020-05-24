@@ -1,60 +1,83 @@
 #T {
   font-weight: bolder;
+  display: block;
+  width: 200px;
+  text-align: center;
 }
+
 * {
   word-wrap: break-word;
 }
 
 @media (max-width: 414px) {
-  table {
-    width: 1000px;
-  }
-
   #D {
     display: flex;
-    width: 250px !important;
+    width: 242px !important;
   }
 
   #T {
     display: block;
-    width: 250px !important;
+    width: 242px !important;
+    text-align: center;
+  }
+
+  #TELE {
+    display: flex;
+    width: 242px !important;
+    text-align: center;
   }
 
   #boton {
     display: flex;
   }
+
+  /* ------------------- */
 }
 
 @media (max-width: 375px) {
   #T {
     display: block;
-    width: 220px !important;
+    width: 203px !important;
   }
   #D {
     display: flex;
-    width: 220px !important;
+    width: 203px !important;
+  }
+  #TELE {
+    display: flex;
+    width: 203px !important;
   }
 }
 
 @media (max-width: 360px) {
   #T {
     display: block;
-    width: 205px !important;
+    width: 189px !important;
   }
   #D {
     display: flex;
-    width: 205px !important;
+    width: 189px !important;
+  }
+
+  #TELE {
+    display: flex;
+    width: 189px !important;
   }
 }
 
 @media (max-width: 320px) {
   #D {
     display: flex;
-    width: 166px !important;
+    width: 150px !important;
   }
 
   #T {
     display: block;
-    width: 166px !important;
+    width: 150px !important;
+  }
+
+  #TELE {
+    display: flex;
+    width: 150px !important;
   }
 }

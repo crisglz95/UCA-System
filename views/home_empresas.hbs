@@ -1,6 +1,8 @@
 {{>header}}
 <link rel="stylesheet" href="./assets/css/cupones_style_system.css">
 <link rel="stylesheet" href="./assets/css/empresa_listado.css">
+<link rel="stylesheet" href="./assets/css/TablesResponsive.css">
+
 {{!-- paginar --}}
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
 
@@ -29,11 +31,11 @@
 
                             <tr>
                                 <td> <img id="image" src="./assets/img/uber.png" alt=""> </td>
-                                <td>{{this.nombre_empresa}}</td>
-                                <td>{{this.descripcion_empresa}}</td>
-                                <td>{{this.tel}}</td>
-                                <td> <button type="button" class="btn btn-outline-info" data-toggle="modal"
-                                        data-target="#miModal{{@key}}">
+                                <td id="T">{{this.nombre_empresa}}</td>
+                                <td id="D">{{this.descripcion_empresa}}</td>
+                                <td id="TELE">{{this.tel}}4493865009</td>
+                                <td id="boton"> <button type="button" class="btn btn-outline-info btn-block"
+                                        data-toggle="modal" data-target="#miModal{{@key}}">
                                         Ver
                                     </button></td>
                             </tr>
@@ -86,7 +88,7 @@
 
         </section>
     </div>
-</div>
+    </div>
     <script src="./assets/js/CopiarCupon.js"></script>
 
 
