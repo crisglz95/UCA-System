@@ -33,7 +33,12 @@
                                 <td> <img id="image" src="./assets/img/uber.png" alt=""> </td>
                                 <td id="T">{{this.nombre_empresa}}</td>
                                 <td id="D">{{this.descripcion_empresa}}</td>
-                                <td id="TELE">{{this.tel}}4493865009</td>
+                                <td id="TELE">
+                                    <button id="btnCopy" style="text-decoration: none;" type="button"
+                                        class="btn btn-link">
+                                        <b> <span id="text" class="codigo">{{this.tel}}</span></b>
+                                    </button>
+                                </td>
                                 <td id="boton"> <button type="button" class="btn btn-outline-info btn-block"
                                         data-toggle="modal" data-target="#miModal{{@key}}">
                                         Ver
@@ -89,7 +94,6 @@
         </section>
     </div>
     </div>
-    <script src="./assets/js/CopiarCupon.js"></script>
 
 
     {{>footer}}
