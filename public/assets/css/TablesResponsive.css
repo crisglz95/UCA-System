@@ -1,18 +1,20 @@
 #T {
   font-weight: bolder;
 }
+* {
+  word-wrap: break-word;
+}
 
 @media (max-width: 414px) {
   table {
     width: 1000px;
-    word-wrap: break-word;
   }
 
   #D {
     display: flex;
-    width: 290px !important;
-    /* para que las palabras no se corten */
+    width: 250px !important;
   }
+
   #T {
     display: block;
     width: 250px !important;
@@ -23,10 +25,36 @@
   }
 }
 
-@media (max-width: 414px) {
+@media (max-width: 375px) {
+  #T {
+    display: block;
+    width: 220px !important;
+  }
   #D {
     display: flex;
-    width: 230px !important;
-    /* para que las palabras no se corten */
+    width: 220px !important;
+  }
+}
+
+@media (max-width: 360px) {
+  #T {
+    display: block;
+    width: 205px !important;
+  }
+  #D {
+    display: flex;
+    width: 205px !important;
+  }
+}
+
+@media (max-width: 320px) {
+  #D {
+    display: flex;
+    width: 166px !important;
+  }
+
+  #T {
+    display: block;
+    width: 166px !important;
   }
 }
