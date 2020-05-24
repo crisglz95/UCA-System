@@ -19,11 +19,11 @@ app.get('/registro', (req, res) => {
     res.render('register', {})
 });
 
-app.get('/administrador-home', (req, res) => {
+app.get('/administrador-home', verificaToken, (req, res) => {
     res.render('admin-sys', {})
 });
 
-app.get('/lista-empresa', (req, res) => {
+app.get('/lista-empresa', verificaToken, (req, res) => {
     Empresa.find({ status: false, administrador: false }).exec((err, EmpresaDB) => {
         if (err) {
             return res.status(400).json({
@@ -36,7 +36,7 @@ app.get('/lista-empresa', (req, res) => {
     });
 });
 
-app.get('/lista-empresa-activas', (req, res) => {
+app.get('/lista-empresa-activas', verificaToken, (req, res) => {
     Empresa.find({ status: true, administrador: false | undefined }).exec((err, EmpresaDB) => {
         if (err) {
             return res.status(400).json({
