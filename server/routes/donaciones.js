@@ -15,7 +15,7 @@ app.get("/donaciones", function(req, res) {
             });
         }
 
-        res.json({
+        res.render("donaciones", {
             ok: true,
             donacion,
         });
