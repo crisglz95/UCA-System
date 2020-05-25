@@ -1,6 +1,41 @@
+@import url("https://fonts.googleapis.com/css?family=Oswald|Roboto+Condensed&display=swap");
+
+#s {
+  margin-top: 175px;
+}
+
 #dc {
   text-align: center;
+  /* margin-top: 14%; */
 }
 #imagen {
   width: 100px;
+}
+
+#TD {
+  font-family: "Oswald", sans-serif;
+  text-align: center;
+  font-size: 18px;
+}
+
+p {
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+/* break points */
+
+@media (max-width: 1024px) {
+  #s {
+    margin-top: 140px;
+  }
+}
+@media (max-width: 1024px) {
+  #s {
+    margin-top: 110px;
+  }
+}
+@media (max-width: 414px) {
+  #s {
+    margin-top: 60px;
+  }
 }

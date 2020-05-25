@@ -8,49 +8,74 @@
 <body>
     {{>navbar}}
 
-    <h2>DONACIONES</h2>
+    <div id="empresaTitulo">
+        <span id="letrasCupones2">Donación</span>
+        <span id="LA1E"></span>
+        <span id="LA2E"></span>
+    </div>
+
 
     <div id="bodcupon">
-        {{!-- <div class="col-12 mt-5"> --}}
-            <div class="container marketing">
-                <!--  -->
-                <div class="row">
-                    {{#each donacion}}
-                    <div class="col-lg-4 mt-5" id="dc">
-                        <img id="imagen" src="./assets/img/uber.png" alt="">
-                        <h2 class="">Mango</h2>
-                        <p>30$ kilo</p>
-                        <p>El mango es el nombre de las frutas de varias especies de árboles del género Mangifera</p>
-
-                     
-                        <p><a class="btn btn-outline-info " href="#" role="button">Agregar al carrito</a></p>
-                    </div>
-                    {{/each}}
-                    <!--  -->
-                    {{!-- <div class="col-lg-4 mt-5" id="dc">
-                        <img id="imagen" src="./assets/img/uber.png" alt="">
-                        <h2>Piña</h2>
-                        <p>32.5$ kilo</p>
-                        <p>Ananas comosus, la piña, el ananá, ananás o matzatli, es una planta perenne de la familia
-                        </p>
-                     
-                        <p><a class="btn btn-outline-info " href="./html/tienda_frutas.html"
-                                role="button">Agregar al carrito</a></p>
-                    </div>
-
-                    <!--  -->
-                    <div class="col-lg-4 mt-5" id="dc">
-                        <img id="imagen" src="./assets/img/uber.png" alt="">
-                        <h2>Uvas</h2>
-                        <p>42.5$ kilo</p>
-                        <p>La uva es una fruta obtenida de la vid. Las uvas vienen en racimos, son pequeñas</p>
-                     
-                        <p><a class="btn btn-outline-info " href="#" role="button">Agregar al carrito</a></p>
-                    </div> --}}
-
+        <div class="container marketing " id="s">
+            <div class="row">
+                {{#each donacion}}
+                <div class="col-lg-4" id="dc">
+                    <img id="imagen" src="./assets/img/uber.png" alt="">
+                    <p id="TD" class="text-center">{{this.titulo_donacion}}</p>
+                    <p>{{this.descripcion_donacion}}</p>
+                    <p><button type="button" class="btn btn-outline-info mt-2 mb-5" data-toggle="modal"
+                            data-target="#miModal{{@key}}">
+                            Ver información..
+                        </button></p>
                 </div>
+                {{/each}}
+
+
+
+                {{!-- MODAL --}}
+                {{#each donacion}}
+                <div class="modal fade" id="miModal{{@key}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true" class="text-center"> &times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div id="contenedorImg">
+
+                                    <img id="imgModal" class="img-responsive" src="./assets/img/uber.png" alt="" />
+                                </div>
+                                <p id="tituloCupon">
+                                    {{this.titulo_donacion}}
+                                </p>
+                                <p class="TxtMInf">
+                                    N° Cuenta:
+                                    <button id="btnCopy" style="text-decoration: none;" type="button"
+                                        class="btn btn-link">
+                                        <b> <span id="text" class="codigo">{{this.cuenta_bancaria}}</span></b>
+                                    </button>
+                                </p>
+                                <p class="TxtMInf">Banco: {{this.banco}}</p>
+                                <p class="TxtMInf">Descripción: {{this.descripcion_donacion}}</p>
+                                <p class="TxtMInf">Fecha final: {{this.fecha_final}}</p>
+                                {{!-- <p class="TxtMInf">Empresa: {{this.empresa}}</p> --}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {{/each}}
             </div>
+
+
         </div>
+
+
+
+    </div>
 
 
 
