@@ -42,12 +42,12 @@
                 <form action="/listarCupones" method="POST">
                   <div class="form-group col-md-12 mb-3">
                     <label for="" class="labelcupon">Titulo Cupón:</label>
-                    <input type="text" name="titulo_cupon" placeholder="Escribe el titulo" class="form-control"
+                    <input type="text" required name="titulo_cupon" placeholder="Escribe el titulo" class="form-control"
                       name="titulo_cupon" />
                   </div>
                   <div class="form-group col-md-12 mb-3">
                     <label for="" class="labelcupon">Tipo de cupón:</label>
-                    <select name="tipo_cupon" id="" class="form-control">
+                    <select name="tipo_cupon" required id="" class="form-control">
                       <option value="">Selecciona tipo de cupón</option>
                       <option value="descuentos">Descuentos</option>
                       <option value="promociones">Promociones</option>
@@ -57,7 +57,8 @@
 
                   <div class="form-group col-md-12 mb-3">
                     <label for="" class="labelcupon">Codigo:</label>
-                    <input type="text" class="form-control" placeholder="ingresa el codigo del cupón" name="codigo" />
+                    <input type="text" required class="form-control" placeholder="ingresa el codigo del cupón"
+                      name="codigo" />
                   </div>
 
                   <div class="form-group col-md-12 mb-3">
@@ -68,7 +69,7 @@
 
                   <div class="form-group col-md-12 mb-3">
                     <label for="" class="labelcupon">Valido Para:</label>
-                    <select name="valido_persona" id="" class="form-control">
+                    <select name="valido_persona" required id="" class="form-control">
                       <option value="">Selecciona opción</option>
                       <option value="personas">Cualquier Persona</option>
                       <option value="estudiantes">Estudiantes</option>
@@ -77,19 +78,21 @@
 
                   <div class="form-group col-md-12 mb-3">
                     <label for="" class="labelcupon">Condiciones</label>
-                    <textarea name="condiciones" class="form-control" id="" cols="30" rows="2"
+                    <textarea name="condiciones" required class="form-control" id="" cols="30" rows="2"
                       placeholder="Escribe las condiciones de el cupón"></textarea>
                   </div>
 
                   <div class="form-row">
                     <div class="col-md-12 mb-3">
                       <label for="validationCustom03" class="labelcupon">Fecha Inicio:</label>
-                      <input type="text" name="fecha_inicio" id="fecha_inicio" class="form-control text-center" />
+                      <input type="text" name="fecha_inicio" disabled id="fecha_inicio"
+                        class="form-control text-center" />
                       {{!-- <h1 id="date"></h1> --}}
                     </div>
                     <div class="col-md-12 mb-3">
                       <label for="validationCustom03" class="labelcupon">Fecha Final:</label>
-                      <input type="date" class="form-control" name="fecha_final" min="2020-05-19" max="2023-05-19" />
+                      <input type="date" class="form-control" required name="fecha_final" min="2020-05-25"
+                        max="2023-05-19" />
                     </div>
                   </div>
 
