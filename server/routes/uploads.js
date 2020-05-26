@@ -3,14 +3,23 @@ const fileUpload = require('express-fileupload');
 const app = express();
 
 const Empresa = require('../models/empresa');
+const Cupon = require('../models/cupon');
+const { verificaToken } = require('../middlewares/autenticacion');
 
 const fs = require('fs');
 const path = require('path');
 
 app.use(fileUpload({ useTempFiles: true }));
 
-app.put('/upload/:id', function(req, res) {
-    let id = req.params.id;
+app.get('/subirImagen', verificaToken, function(req, res) {
+    res.render('agregar-foto', {
+
+    });
+})
+
+app.post('/upload', verificaToken, function(req, res) { //tenia id
+    //let id = req.params.id;
+    let id = req.empresa._id;
     if (!req.files) {
         return res.status(400)
             .json({
@@ -19,7 +28,8 @@ app.put('/upload/:id', function(req, res) {
             });
     }
 
-    let archivo = req.files.archivo;
+    //let archivo = req.files.archivo;
+    let archivo = req.files.imagen_cupon;
     let nombreCortado = archivo.name.split('.');
     console.log(nombreCortado);
     console.log(nombreCortado.length);

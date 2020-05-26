@@ -39,7 +39,7 @@
                 <div class="col-md-12 mb-3">
                   <p class="text-center" id="agregarCuponT">Agregar Cupón</p>
                 </div>
-                <form action="/listarCupones" method="POST">
+                <form enctype="multipart/form-data" action="/listarCupones" method="POST">
                   <div class="form-group col-md-12 mb-3">
                     <label for="" class="labelcupon">Titulo Cupón:</label>
                     <input type="text" required name="titulo_cupon" placeholder="Escribe el titulo" class="form-control"
