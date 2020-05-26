@@ -38,7 +38,7 @@ app.post("/login", (req, res) => {
         }
 
         if (empresaDB.status === false) {
-            return res.status(400).json({
+            return res.render('validacion-pendiente', {
                 ok: false,
                 err: true,
                 message: 'Empresa no validada'
