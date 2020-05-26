@@ -30,7 +30,7 @@
                 <h1>Edicion de Empresa {{empresa.nombre_empresa}}</h1>
             </div>
             <div class="formulario">
-                <form action="/empresa:{{empresa._id}}" method="POST">
+                <form action="/empresa:{{empresa._id}}/{{empresa.status}}" method="POST">
                     <div class="form-group">
                         <label for="">Giro Empresarial</label>
                         <select name="giro_empresarial" id="giro" class="form-control">
@@ -70,6 +70,6 @@
 <script>
     document.ready = document.getElementById('nombre').value = "{{empresa.nombre_completo}}";
     document.ready = document.getElementById('tel').value = {{empresa.tel}};
-    document.ready = document.getElementById('giro').value = "Otros";
+    document.ready = document.getElementById('giro').value = {{empresa.giro_empresarial}};
 </script>
 </body>
