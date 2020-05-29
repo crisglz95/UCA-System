@@ -49,7 +49,7 @@ app.post('/upload', verificaToken, function(req, res) { //tenia id
     }
 
     let nombreArchivo = `${ id } - ${ new Date().getMilliseconds() }.${ extencion }`;
-    archivo.mv(`uploads/${ nombreArchivo }`, (err) => {
+    archivo.mv(`public/assets/uploads/${ nombreArchivo }`, (err) => {
         if (err) {
             return res.status(500)
                 .json({
