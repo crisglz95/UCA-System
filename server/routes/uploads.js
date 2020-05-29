@@ -94,7 +94,7 @@ function imagenEmpresa(id, res, nombreArchivo) {
 }
 
 function borrarArchivo(nombreImagen) {
-    let pathImagen = path.resolve(__dirname, `../../uploads/${ nombreImagen }`);
+    let pathImagen = path.resolve(__dirname, `../../public/assets/uploads/${ nombreImagen }`);
     if (fs.existsSync(pathImagen)) {
         fs.unlinkSync(pathImagen);
     }
