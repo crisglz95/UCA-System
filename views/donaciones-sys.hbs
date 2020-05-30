@@ -38,7 +38,7 @@
                 <table class="table-responsive-sm mt-4">
                     <thead>
                         <tr>
-                            <th>N°</th>
+                            <th>Imagen</th>
                             <th>Nombre</th>
                             <th>Cuenta</th>
                             <th>Banco</th>
@@ -49,8 +49,8 @@
                     <tbody>
                         {{#each donaciones}}
                         <tr>
-                            <td></td>
-                            {{!-- <td id="image"><img src="./assets/img/uni2.png" alt=""></td> --}}
+                            <td id="image"><img style="width: 150px;" src="./assets/uploads/{{this.imagen}}" alt="">
+                            </td>
                             <td>{{this.titulo_donacion}}</td>
                             <td>{{this.descripcion_donacion}}</td>
                             <td>{{this.cuenta_bancaria}}</td>
