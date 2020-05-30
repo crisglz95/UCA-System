@@ -1,0 +1,67 @@
+{{> header}}
+<link rel="stylesheet" href="./assets/css/cupon.css">
+
+<body>
+  <div class="contenedor">
+    <div class="menu" id="menu">
+      <ul>
+        <li>
+          <img src="./assets/img/empresas/inicio.png" alt="">
+          <a href="/sistemaHome">Inicio</a>
+        </li>
+        <li>
+          <img src="./assets/img/empresas/cupones.png" alt="">
+          <a href="/sistemaCupones">Cupones</a>
+        </li>
+        <li>
+          <img src="./assets/img/empresas/Donaciones.png" alt="">
+          <a href="/sistemaDonaciones">Donaciones</a>
+        </li>
+          <li>
+                    <img src="./assets/img/empresas/logOut.png" alt="">
+                    <a href="/">Salir</a>
+                </li>
+      </ul>
+    </div>
+    <div class="contenido" id="form-cupon">
+      <button type="button" id="sidebarCollapse" class="btn" data-toggle="collapse">
+        <span class="navbar-toggler-icon"><i class="fa fa-list" aria-hidden="true"></i></span>
+      </button>
+
+
+
+
+      <h1 class="text-center mt-5" id="FD_TX">Imagen de Cupon</h1>
+      <div class="container text-center">
+        <div class="jumbotron" style="background-color: white;">
+          <!-- FORMULARIO -->
+          <div id="CF">
+            <div class="card col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
+              <div class="card-body">
+                <div class="col-md-12 mb-3">
+                  <p class="text-center" id="agregarDonacion">Agregar Imagen {{CUPON.titulo_cupon}}</p>
+                </div>
+                <form enctype="multipart/form-data" action="/upload-cupon:{{CUPON._id}}" method="POST">
+                  <div class="form-group col-md-12 mb-3">
+                    <label for="" class="labelcupon">Selecciona la imagen:</label>
+                    <input type="file" placeholder="Selecciona el arvhivo de imagen" class="form-control"
+                      name="imagen_cupon" accept="image/png , .jpeg, .jpg , image/gif"/>
+                  </div>
+                    <button type="submit" id="btnAgregar" class="btn btn-outline-info btn-block ">
+                      Agregar
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="./assets/js/fecha.js"></script>
+
+
+  {{> footer}}

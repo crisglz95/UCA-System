@@ -134,7 +134,8 @@ app.post("/listarCupones", verificaToken, function(req, res) {
 
     CUPON.save((err, cuponStored) => {
         if (err) res.status(500).send({ message: `Error al salvar bd ${err}` });
-        res.render("register-success", {
+        console.log(cuponStored);
+        res.render("agregar-foto-cupon", { //tenia register-success
             CUPON: cuponStored,
             enlace: "/sistemaCupones",
             boton: "Cupones",
