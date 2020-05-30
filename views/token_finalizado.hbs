@@ -1,0 +1,63 @@
+{{> header}}
+
+<body>
+
+    <div class="limiter">
+        <div class="container-login100">
+            <div class="wrap-login100" data-validate="Empresa">
+                <form class="login100-form validate-form" action="/login" method="POST">
+                    <span class="login100-form-title p-b-48">
+                        <img src="./assets/img/uca_logo.png" class="img-responsive" alt="" />
+                    </span>
+
+                    <div class="wrap-input100 validate-input">
+                        <input class="input100" type="text" name="correo" />
+                        <span class="focus-input100" data-placeholder="Empresa"></span>
+                    </div>
+
+                    <div class="wrap-input100 validate-input" data-validate="password">
+                        <span class="btn-show-pass"> </span>
+                        <input class="input100" type="password" name="password" />
+                        <span class="focus-input100" data-placeholder="Contraseña"></span>
+                    </div>
+
+                    <div class="container-login100-form-btn">
+                        <div class="wrap-login100-form-btn">
+                            <div class="login100-form-bgbtn"></div>
+                            <button class="login100-form-btn" id="btnlogin" type="submit">
+                                Log in
+                            </button>
+                        </div>
+                        <div class="alert alert-warning mt-3" role="alert">
+                            <p>SESIÓN FINALIZADA</p>
+                        </div>
+                    </div>
+
+                    <div class="text-center p-t-115">
+                        <span class="txt1">
+                            Aun no estas registrado?
+                        </span>
+
+                        <a class="txt2" href="/registro">
+                            Registrate
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="dropDownSelect1"></div>
+
+    {{!-- SCRIPTS --}}
+    <script src="./assets/js/jquery-3.2.1.min.js"></script>
+    <script src="./assets/js/animsition.min.js"></script>
+    <script src="./assets/js/popper.js"></script>
+    <script src="./assets/js/bootstrap.min.js"></script>
+    <script src="./assets/js/select2.min.js"></script>
+    <script src="./assets/js/moment.min.js"></script>
+    <script src="./assets/js/daterangepicker.js"></script>
+    <script src="./assets/js/countdowntime.js"></script>
+    <script src="./assets/js/main.js"></script>
+</body>
+
+</html>
