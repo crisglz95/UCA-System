@@ -85,12 +85,12 @@
                             {{#each cupones}}
 
                             <tr>
-                                <td> <img id="image" src="./assets/img/uber.png" alt=""> </td>
+                                <td> <img id="image" src="./assets/uploads/{{this.imagen_cupon}}" alt=""> </td>
                                 <td id="T">{{this.titulo_cupon}}</td>
                                 <td id="D">{{this.decripcion}}</td>
 
-                                <td id="boton"> <button type="button" class="btn btn-outline-info btn-block" data-toggle="modal"
-                                        data-target="#miModal{{@key}}">
+                                <td id="boton"> <button type="button" class="btn btn-outline-info btn-block"
+                                        data-toggle="modal" data-target="#miModal{{@key}}">
                                         Ver
                                     </button></td>
                             </tr>
@@ -113,7 +113,8 @@
                                 <div class="modal-body">
                                     <div id="contenedorImg">
 
-                                        <img id="imgModal" class="img-responsive" src="./assets/img/uber.png" alt="" />
+                                        <img id="imgModal" class="img-responsive"
+                                            src="./assets/uploads/{{this.imagen_cupon}}" alt="" />
                                     </div>
                                     <p id="tituloCupon">
                                         {{this.titulo_cupon}}
