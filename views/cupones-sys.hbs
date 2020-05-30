@@ -1,5 +1,6 @@
 {{> header}}
 <link rel="stylesheet" href="./assets/css/tableUca.css">
+
 <body>
     <div class="contenedor">
         <div class="menu" id="menu">
@@ -16,7 +17,7 @@
                     <img src="./assets/img/empresas/Donaciones.png" alt="">
                     <a href="/sistemaDonaciones">Donaciones</a>
                 </li>
-                  <li>
+                <li>
                     <img src="./assets/img/empresas/logOut.png" alt="">
                     <a href="/">Salir</a>
                 </li>
@@ -46,23 +47,26 @@
                     <tbody>
                         {{#each cupones}}
                         <tr>
-                           
-                            <td id="image"><img style="width: 150px;" src="./assets/uploads/{{this.imagen_cupon}}" alt=""></td>
+
+                            <td id="image"><img style="width: 150px;" src="./assets/uploads/{{this.imagen_cupon}}"
+                                    alt=""></td>
                             <td>{{this.titulo_cupon}}</td>
                             <td>{{this.decripcion}}</td>
                             <td>{{this.codigo}}</td>
                             <td>{{this.tipo_cupon}}</td>
                             <td class="text-center">
-                                <a href=""><img style="width: 30px;" src="./assets/img/icons/delate.png" alt=""></a>
-                                <a href="" type="button"> <img style="width:30px;" src="./assets/img/icons/edit.png" alt=""></a>
-                                <a href=""><img  style="width: 30px;" src="./assets/img/icons/ver.png" alt=""></a>
+                                <a href=""><img style="width: 30px;" src="./assets/img/icons/delate.png"
+                                        alt="eliminar"></a>
+                                <a href="" type="button" href="/cupon-edit-sys"> <img style="width:30px;"
+                                        src="./assets/img/icons/edit.png" alt="editar"></a>
+                                <a href=""><img style="width: 30px;" src="./assets/img/icons/ver.png" alt="ver"></a>
                             </td>
                         </tr>
                         {{/each}}
                     </tbody>
                 </table>
             </div>
-            
+
         </div>
     </div>
 

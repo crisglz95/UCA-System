@@ -1,0 +1,122 @@
+{{> header}}
+<link rel="stylesheet" href="./assets/css/cupon.css">
+
+<body>
+    <div class="contenedor">
+        <div class="menu" id="menu">
+            <ul>
+                <li>
+                    <img src="./assets/img/empresas/inicio.png" alt="">
+                    <a href="/sistemaHome">Inicio</a>
+                </li>
+                <li>
+                    <img src="./assets/img/empresas/cupones.png" alt="">
+                    <a href="/sistemaCupones">Cupones</a>
+                </li>
+                <li>
+                    <img src="./assets/img/empresas/Donaciones.png" alt="">
+                    <a href="/sistemaDonaciones">Donaciones</a>
+                </li>
+                <li>
+                    <img src="./assets/img/empresas/logOut.png" alt="">
+                    <a href="/">Salir</a>
+                </li>
+            </ul>
+        </div>
+        <div class="contenido" id="form-cupon">
+            <button type="button" id="sidebarCollapse" class="btn" data-toggle="collapse">
+                <span class="navbar-toggler-icon"><i class="fa fa-list" aria-hidden="true"></i></span>
+            </button>
+
+
+            {{!-- <h1 class="text-center mt-5" id="FC_TXT">Formulario Cupon</h1> --}}
+            <div class="container text-center">
+                <div class="jumbotron" style="background-color: white;">
+                    <!-- FORMULARIO -->
+                    <div id="CF">
+                        <div class="card col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8" id="FC">
+                            <div class="card-body">
+                                <div class="col-md-12 mb-3">
+                                    <p class="text-center" id="agregarCuponT">Editar Cupón</p>
+                                </div>
+                                <form enctype="multipart/form-data" action="/listarCupones" method="POST">
+                                    <div class="form-group col-md-12 mb-3">
+                                        <label for="" class="labelcupon">Titulo Cupón:</label>
+                                        <input type="text" required name="titulo_cupon" placeholder="Escribe el titulo"
+                                            class="form-control" name="titulo_cupon" />
+                                    </div>
+                                    <div class="form-group col-md-12 mb-3">
+                                        <label for="" class="labelcupon">Tipo de cupón:</label>
+                                        <select name="tipo_cupon" required id="" class="form-control">
+                                            <option value="">Selecciona tipo de cupón</option>
+                                            <option value="descuentos">Descuentos</option>
+                                            <option value="promociones">Promociones</option>
+                                            <option value="envios">Envios</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group col-md-12 mb-3">
+                                        <label for="" class="labelcupon">Codigo:</label>
+                                        <input type="text" required class="form-control"
+                                            placeholder="ingresa el codigo del cupón" name="codigo" />
+                                    </div>
+
+                                    <div class="form-group col-md-12 mb-3">
+                                        <label for="" class="labelcupon">Minimo de Compra:</label>
+                                        <input type="text" class="form-control" placeholder="ingresa la compra minima"
+                                            name="minimo_compra" />
+                                    </div>
+
+                                    <div class="form-group col-md-12 mb-3">
+                                        <label for="" class="labelcupon">Valido Para:</label>
+                                        <select name="valido_persona" required id="" class="form-control">
+                                            <option value="">Selecciona opción</option>
+                                            <option value="personas">Cualquier Persona</option>
+                                            <option value="estudiantes">Estudiantes</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group col-md-12 mb-3">
+                                        <label for="" class="labelcupon">Condiciones</label>
+                                        <textarea name="condiciones" required class="form-control" id="" cols="30"
+                                            rows="2" placeholder="Escribe las condiciones de el cupón"></textarea>
+                                    </div>
+
+                                    <div class="form-row">
+                                        <div class="col-md-12 mb-3">
+                                            <label for="validationCustom03" class="labelcupon">Fecha Inicio:</label>
+                                            <input type="text" name="fecha_inicio" disabled id="fecha_inicio"
+                                                class="form-control text-center" />
+                                            {{!-- <h1 id="date"></h1> --}}
+                                        </div>
+                                        <div class="col-md-12 mb-3">
+                                            <label for="validationCustom03" class="labelcupon">Fecha Final:</label>
+                                            <input type="date" class="form-control" required name="fecha_final"
+                                                min="2020-05-25" max="2023-05-19" />
+                                        </div>
+                                    </div>
+
+
+                            </div>
+
+                            <div class="form-group col-md-12 mb-3">
+                                <label for="" class="labelcupon"> Descripción:</label>
+                                <textarea name="decripcion" id="" cols="50" rows="3" required class="form-control"
+                                    placeholder="Escribe descripción del cupon "></textarea>
+                                <button type="submit" id="btnAgregar" class="btn btn-outline-info btn-block ">
+                                    Agregar
+                                </button>
+                            </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+    <script src="./assets/js/fecha.js"></script>
+
+    {{> footer}}
