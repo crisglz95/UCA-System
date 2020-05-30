@@ -35,7 +35,7 @@
                 <table class=" table-responsive-sm mt-4">
                     <thead>
                         <tr>
-                            <th>N°</th>
+                            <th>Imagen</th>
                             <th>Titulo</th>
                             <th>Descripcion</th>
                             <th>Codigo</th>
@@ -46,8 +46,8 @@
                     <tbody>
                         {{#each cupones}}
                         <tr>
-                            <td></td>
-                            {{!-- <td id="image"><img src="./assets/img/uni2.png" alt=""></td> --}}
+                           
+                            <td id="image"><img style="width: 150px;" src="./assets/uploads/{{this.imagen_cupon}}" alt=""></td>
                             <td>{{this.titulo_cupon}}</td>
                             <td>{{this.decripcion}}</td>
                             <td>{{this.codigo}}</td>

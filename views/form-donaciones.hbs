@@ -44,18 +44,18 @@
                 <form action="/donaciones" method="POST">
                   <div class="form-group col-md-12 mb-3">
                     <label for="" class="labelcupon">Titulo donación:</label>
-                    <input type="text" name="titulo_donacion" placeholder="Escribe el titulo" class="form-control"
+                    <input required type="text" name="titulo_donacion" placeholder="Escribe el titulo" class="form-control"
                       name="titulo_donacion" />
                   </div>
 
                   <div class="form-group col-md-12 mb-3">
                     <label for="" class="labelcupon">N° de cuenta:</label>
-                    <input type="text" class="form-control" placeholder="ingresa N° de cuenta" name="cuenta_bancaria" />
+                    <input required type="text" class="form-control" placeholder="ingresa N° de cuenta" name="cuenta_bancaria" />
                   </div>
 
                   <div class="form-group col-md-12 mb-3">
                     <label for="" class="labelcupon">Banco:</label>
-                    <select name="banco" id="" class="form-control">
+                    <select required name="banco" id="" class="form-control">
                       <option value="">Selecciona tu banco</option>
                       <option value="Banamex">Banamex</option>
                       <option value="Santander">Santander</option>
@@ -109,17 +109,17 @@
                   <div class="form-row">
                     <div class="col-md-6 mb-3">
                       <label for="validationCustom03" class="labelcupon">Fecha Inicio:</label>
-                      <input type="text" name="fecha_inicio" id="fecha_inicio" class="form-control" />
+                      <input type="text" disabled name="fecha_inicio" id="fecha_inicio" class="form-control" />
                     </div>
                     <div class="col-md-6 mb-3">
                       <label for="validationCustom03" class="labelcupon">Fecha Final:</label>
-                      <input type="date" class="form-control" name="fecha_final" min="2020-05-19" max="2023-05-19" />
+                      <input type="date" required class="form-control" name="fecha_final" min="2020-05-19" max="2023-05-19" />
                     </div>
                   </div>
 
                   <div class="form-group col-md-12 mb-3">
                     <label for="" class="labelcupon"> Descripción:</label>
-                    <textarea name="descripcion_donacion" id="" cols="50" rows="3" class="form-control"
+                    <textarea required name="descripcion_donacion" id="" cols="50" rows="3" class="form-control"
                       placeholder="Escribe descripción del cupon"></textarea>
                     <button type="submit" id="btnAgregar" class="btn btn-outline-info btn-block ">
                       Agregar
