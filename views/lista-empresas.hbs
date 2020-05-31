@@ -1,24 +1,37 @@
 {{> header}}
 <link rel="stylesheet" href="./assets/css/administrador.css">
+<link rel="stylesheet" href="./assets/css/tableUca.css">
+
 <body>
 
-<div class="contenedor">
+    <div class="contenedor">
         <div class="menu">
             <nav class="navbar navbar-expand-lg navbar-dark">
                 <a class="navbar-brand" href="#">UCA Admin</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item active">
-                            <a class="nav-link" href="/administrador-home">Inicio <span class="sr-only">(current)</span></a>
+                            <img src="./assets/img/admin/inicio.png" alt="">
+
+                            <a class="nav-link" href="/administrador-home"> Inicio <span
+                                    class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
+                            <img src="./assets/img/admin/Empresas.png" alt="">
+
                             <a class="nav-link" href="/lista-empresa">Empresas</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Consultorias y Capacitaciones</a>
+                            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Consultorias y
+                                Capacitaciones</a>
+                        </li>
+                        <li>
+                            <img src="./assets/img/empresas/logOut.png" alt="">
+                            <a href="/">Salir</a>
                         </li>
                     </ul>
                 </div>
@@ -31,29 +44,30 @@
             </div>
             <div class="tipo">
                 <div class="btn-group" role="group" aria-label="Basic example">
-                    
+
                     <button type="button" class="btn btn-outline-danger"><a href="/lista-empresa">Inactivas</a></button>
-                    
-                    <button type="button" class="btn btn-outline-success"><a href="/lista-empresa-activas">Activas</a></button>
+
+                    <button type="button" class="btn btn-outline-success"><a
+                            href="/lista-empresa-activas">Activas</a></button>
                 </div>
             </div>
             <div class="tabla">
-                <table class="table table-striped">
+                <table class="table table-striped table-responsive-sm">
                     <thead>
                         <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Empresa</th>
-                            <th scope="col">Titular</th>
-                            <th scope="col">Correo Electronico</th>
+                            <th>Empresa</th>
+                            <th>Titular</th>
+                            <th>Correo Electronico</th>
+                            <th>Operaciones</th>
                         </tr>
                     </thead>
                     <tbody>
                         {{#each empresa}}
                         <tr>
-                            <th scope="row"><a href="/activarEmpresa:{{this._id}}">Ir</a></th>
                             <td>{{this.nombre_empresa}}</td>
                             <td>{{this.nombre_completo}}</td>
                             <td>{{this.correo}}</td>
+                            <th scope="row"><a href="/activarEmpresa:{{this._id}}"><a href="./assets/img/admin/success.png"></a></a></th>
                         </tr>
                         {{/each}}
                     </tbody>
@@ -62,5 +76,6 @@
         </div>
     </div>
 </body>
+<script src="./assets/js/tableUca.js"></script>
 
 {{>footer}}

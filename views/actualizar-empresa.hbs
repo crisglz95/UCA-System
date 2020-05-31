@@ -46,10 +46,10 @@
                 <form action="/empresa:{{empresa._id}}:{{empresa.status}}" method="POST">
                     <div class="form-group">
                         <label for="">Giro Empresarial</label>
-                        <select name="giro_empresarial" disabled id="" class="form-control">
+                        <select name="giro_empresarial" id="" class="form-control">
                             <option value="{{empresa.giro_empresarial}}">{{empresa.giro_empresarial}}</option>
-                            {{!-- <option value="">Selecciona el giro de tu empresa</option> --}}
-                            {{!-- <option value="Restaurantes/Servicios de comida">Restaurantes/Servicios de comida</option>
+                            <option value="">Selecciona el giro de tu empresa</option>
+                            <option value="Restaurantes/Servicios de comida">Restaurantes/Servicios de comida</option>
                             <option value="Hoteleria">Hoteleria</option>
                             <option value="Consultoria Empresarial">Consultoria Empresarial</option>
                             <option value="Medicina">Medicina</option>
@@ -60,55 +60,53 @@
                             <option value="Automoviles">Automoviles</option>
                             <option value="Veterinaria">Veterinaria</option>
                             <option value="Tecnologia">Tecnologia</option>
-                            <option value="Otros">Otros</option> --}}
+                            <option value="Otros">Otros</option>
                         </select>
                     </div>
                     <div class="doble-campo">
                         <div class="form-group w-50 mr-3">
                             <label for="">Nombre Completo</label>
-                            <input type="text" disabled value="{{empresa.nombre_completo}}" class="form-control"
+                            <input type="text" value="{{empresa.nombre_completo}}" class="form-control"
                                 name="nombre_completo">
                         </div>
                         <div class="form-group w-50 ml-3">
                             <label for="">Telefono</label>
-                            <input type="text" disabled value="{{empresa.tel}}" class="form-control" name="tel">
+                            <input type="text" value="{{empresa.tel}}" class="form-control" name="tel">
                         </div>
                     </div>
                     <div class="doble-campo">
                         <div class="form-group w-50 mr-3">
                             <label for="">Carrera:</label>
-                            <input type="text" disabled value="{{empresa.carrera}}" class="form-control" name="carrera">
+                            <input type="text" value="{{empresa.carrera}}" class="form-control" name="carrera">
                         </div>
                         <div class="form-group w-50 ml-3">
                             <label for="">Matricula</label>
-                            <input type="text" disabled class="form-control" value="{{empresa.matricula}}"
-                                name="matricula">
+                            <input type="text" class="form-control" value="{{empresa.matricula}}" name="matricula">
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label for="">Domicilio</label>
-                        <input type="text" disabled class="form-control" value="{{empresa.calle}}" name="calle">
+                        <input type="text" class="form-control" value="{{empresa.calle}}" name="calle">
                     </div>
                     <div class="doble-campo">
                         <div class="form-group w-50 mr-3">
                             <label for="">Colonia</label>
-                            <input type="text" disabled class="form-control" value="{{empresa.numero_dir}}"
-                                name="numero_dir">
+                            <input type="text" class="form-control" value="{{empresa.numero_dir}}" name="numero_dir">
                         </div>
                         <div class="form-group w-50 ml-3">
                             <label for="">Codigo Postal</label>
-                            <input type="number" disabled class="form-control" value="{{empresa.cp}}" name="cp">
+                            <input type="number" class="form-control" value="{{empresa.cp}}" name="cp">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="">Descripción empresa</label>
                         <textarea name="descripcion_empresa" id="" cols="30" rows="4"
-                            value="{{empresa.descripcion_empresa}}" disabled class="form-control"></textarea>
+                            value="{{empresa.descripcion_empresa}}" class="form-control"></textarea>
                     </div>
                     <div class="form-group">
                         <label for="">Correo Electronico</label>
-                        <input type="email" disabled class="form-control" value="{{empresa.correo}}" name="correo">
+                        <input type="email" class="form-control" value="{{empresa.correo}}" name="correo">
                     </div>
 
                     <div class="form-group">
