@@ -29,6 +29,44 @@ app.get("/listarCupones", function(req, res) {
     });
 });
 
+app.get('/ver-info:id', function(req, res) {
+    let id = req.params.id;
+    id = id.substr(1, id.length - 1);
+    let body = req.body;
+
+    cupon.findById(id, (err, cuponDB) => {
+        if (err) {
+            return res.status(500).json({
+                ok: false,
+                err
+            });
+        }
+
+        if (!cuponDB) {
+            return res.status(400).json({
+                ok: false,
+                err: {
+                    message: `Id no encontrado`
+                }
+            })
+        }
+
+        // res.json({
+        //     idCupon: id,
+        //     cupon: cuponDB
+        // })
+
+        console.log(cuponDB);
+
+        res.render('cupon-ver-sys', {
+            ok: true,
+            cupon: cuponDB
+        })
+    })
+
+
+});
+
 // LISTAR CUPONES DESCUENTOS
 app.get("/CuponesDescuentos", function(req, res) {
     cupon.find({ tipo_cupon: "descuentos" }).exec((err, cupones) => {
