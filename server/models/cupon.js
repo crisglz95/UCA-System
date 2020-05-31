@@ -19,7 +19,8 @@ let cuponSchema = new Schema({
     fecha_inicio: String,
     fecha_final: String,
     imagen_cupon: String,
-    empresa: { type: Schema.Types.ObjectId, ref: 'Formulario_Empresa' }
+    empresa: { type: Schema.Types.ObjectId, ref: 'Formulario_Empresa' },
+    eliminado: Boolean
 });
 
 module.exports = mongoose.model("cupon", cuponSchema);

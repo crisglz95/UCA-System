@@ -75,7 +75,7 @@ app.get("/cupon", (req, res) => {
 
 app.get("/sistemaCupones", verificaToken, (req, res) => {
     let idEmpresa = req.empresa._id;
-    cupon.find({ empresa: idEmpresa }).exec((err, cuponesDB) => {
+    cupon.find({ empresa: idEmpresa, eliminado: false || undefined || null }).exec((err, cuponesDB) => {
         if (err) {
             return res.status(400).json({
                 ok: false,
