@@ -19,6 +19,7 @@ let empresaSchema = new Schema({
   descripcion_empresa: String,
   calle: String,
   cp: Number,
+  // numero dir es la colonia
   numero_dir: String,
   estado: String,
   municipio: String,

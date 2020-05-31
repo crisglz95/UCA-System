@@ -43,7 +43,7 @@
                 <h1>Autorización de Empresa {{empresa.nombre_empresa}}</h1>
             </div>
             <div class="formulario">
-                <form action="/empresa:{{empresa._id}}:{{empresa.status}}" method="POST">
+                <form action="/empresa:{{empresa._id}}" method="POST">
                     <div class="form-group">
                         <label for="">Giro Empresarial</label>
                         <select name="giro_empresarial" id="" class="form-control">
@@ -110,7 +110,7 @@
                     </div>
 
                     <div class="form-group">
-                        <button type="submit" class="btn btn-block btn-outline-info">Autorizar Empresa</button>
+                        <button type="submit" class="btn btn-block btn-outline-info">Actualizar Empresa</button>
                     </div>
                 </form>
             </div>
@@ -118,8 +118,14 @@
     </div>
     {{>footer}}
     <script>
+        document.ready = document.getElementById('giro').value = "{{ empresa.giro_empresarial }}";
         document.ready = document.getElementById('nombre').value = "{{empresa.nombre_completo}}";
         document.ready = document.getElementById('tel').value = "{{ empresa.tel }}";
-        document.ready = document.getElementById('giro').value = "{{ empresa.giro_empresarial }}";
+        document.ready = document.getElementById('nombre').value = "{{empresa.carrera}}";
+        document.ready = document.getElementById('nombre').value = "{{empresa.calle}}";
+        document.ready = document.getElementById('nombre').value = "{{empresa.numero_dir}}";
+        document.ready = document.getElementById('nombre').value = "{{empresa.cp}}";
+        document.ready = document.getElementById('nombre').value = "{{empresa.descripcion_empresa}}";
+        document.ready = document.getElementById('nombre').value = "{{empresa.correo}}";
     </script>
 </body>
