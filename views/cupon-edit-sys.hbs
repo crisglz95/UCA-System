@@ -1,10 +1,16 @@
 {{> header}}
 <link rel="stylesheet" href="./assets/css/cupon.css">
+<link rel="stylesheet" href="./assets/css/imagen_perfil_empresa.css">
 
 <body>
     <div class="contenedor">
         <div class="menu" id="menu">
             <ul>
+                <li> <span id="perfilEmpresa">
+                        <a href=""> <img style="width: 150px;" id="imagenPE" src="./assets/uploads/{{empresa.imagen}}"
+                                alt=""></a>
+                    </span>
+                </li>
                 <li>
                     <img src="./assets/img/empresas/inicio.png" alt="">
                     <a href="/sistemaHome">Inicio</a>
@@ -43,18 +49,19 @@
                                 <form enctype="multipart/form-data" action="/editaCupon:{{cupon._id}}" method="POST">
 
                                     <div class="form-group col-md-12 mb-3">
-                                        <img style="width: 150px;" src="./assets/uploads/{{cupon.imagen_cupon}}" class="text-center"
-                                            alt="">
+                                        <img style="width: 150px;" src="./assets/uploads/{{cupon.imagen_cupon}}"
+                                            class="text-center" alt="">
 
                                     </div>
                                     <div class="form-group col-md-12 mb-3">
                                         <label for="" class="labelcupon">Titulo Cupón:</label>
                                         <input type="text" required name="titulo_cupon" placeholder="Escribe el titulo"
-                                            class="form-control" name="titulo_cupon" value="{{cupon.titulo_cupon}}"/>
+                                            class="form-control" name="titulo_cupon" value="{{cupon.titulo_cupon}}" />
                                     </div>
                                     <div class="form-group col-md-12 mb-3">
                                         <label for="" class="labelcupon">Tipo de cupón:</label>
-                                        <select name="tipo_cupon" required id="tipo-cupon" class="form-control" value="{{cupon.tipo_cupon}}">
+                                        <select name="tipo_cupon" required id="tipo-cupon" class="form-control"
+                                            value="{{cupon.tipo_cupon}}">
                                             <option value="">Selecciona tipo de cupón</option>
                                             <option value="descuentos">Descuentos</option>
                                             <option value="promociones">Promociones</option>
@@ -65,7 +72,8 @@
                                     <div class="form-group col-md-12 mb-3">
                                         <label for="" class="labelcupon">Codigo:</label>
                                         <input type="text" required class="form-control"
-                                            placeholder="ingresa el codigo del cupón" name="codigo" value="{{cupon.codigo}}" />
+                                            placeholder="ingresa el codigo del cupón" name="codigo"
+                                            value="{{cupon.codigo}}" />
                                     </div>
 
                                     <div class="form-group col-md-12 mb-3">
@@ -76,7 +84,8 @@
 
                                     <div class="form-group col-md-12 mb-3">
                                         <label for="" class="labelcupon">Valido Para:</label>
-                                        <select name="valido_persona" required id="valido-persona" class="form-control" value={{cupon.valido_personas}}>
+                                        <select name="valido_persona" required id="valido-persona" class="form-control"
+                                            value={{cupon.valido_personas}}>
                                             <option value="">Selecciona opción</option>
                                             <option value="personas">Cualquier Persona</option>
                                             <option value="estudiantes">Estudiantes</option>
@@ -85,8 +94,9 @@
 
                                     <div class="form-group col-md-12 mb-3">
                                         <label for="" class="labelcupon">Condiciones</label>
-                                        <textarea name="condiciones" required class="form-control" id="txtAreaCond" cols="30"
-                                            rows="2" placeholder="Escribe las condiciones de el cupón" value="{{cupon.condiciones}}"></textarea>
+                                        <textarea name="condiciones" required class="form-control" id="txtAreaCond"
+                                            cols="30" rows="2" placeholder="Escribe las condiciones de el cupón"
+                                            value="{{cupon.condiciones}}"></textarea>
                                     </div>
 
                                     <div class="form-row">
@@ -99,7 +109,7 @@
                                         <div class="col-md-12 mb-3">
                                             <label for="validationCustom03" class="labelcupon">Fecha Final:</label>
                                             <input type="date" class="form-control" required name="fecha_final"
-                                                min="2020-05-25" max="2023-05-19"  value="{{cupon.fecha_final}}"/>
+                                                min="2020-05-25" max="2023-05-19" value="{{cupon.fecha_final}}" />
                                         </div>
                                     </div>
 
@@ -108,8 +118,8 @@
 
                             <div class="form-group col-md-12 mb-3">
                                 <label for="" class="labelcupon"> Descripción:</label>
-                                <textarea name="decripcion" id="txtAreaDesc" cols="50" rows="3" required class="form-control"
-                                    placeholder="Escribe descripción del cupon "></textarea>
+                                <textarea name="decripcion" id="txtAreaDesc" cols="50" rows="3" required
+                                    class="form-control" placeholder="Escribe descripción del cupon "></textarea>
                                 <button type="submit" id="btnAgregar" class="btn btn-outline-info btn-block ">
                                     Actualizar Informacion
                                 </button>
@@ -126,10 +136,10 @@
 
     <script src="./assets/js/fecha.js"></script>
     <script>
-        document.getElementById('txtAreaDesc').value="{{cupon.decripcion}}";
-        document.getElementById('txtAreaCond').value="{{cupon.condiciones}}";
-        document.getElementById('tipo-cupon').value="{{cupon.tipo_cupon}}";
-        document.getElementById('valido-persona').value="{{cupon.valido_persona}}";
+        document.getElementById('txtAreaDesc').value = "{{cupon.decripcion}}";
+        document.getElementById('txtAreaCond').value = "{{cupon.condiciones}}";
+        document.getElementById('tipo-cupon').value = "{{cupon.tipo_cupon}}";
+        document.getElementById('valido-persona').value = "{{cupon.valido_persona}}";
     </script>
 
     {{> footer}}
