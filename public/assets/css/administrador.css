@@ -7,6 +7,13 @@
     display: flex;
 }
 
+#activas{
+    background: white;
+}
+#inactivas{
+    background: white;
+}
+
 .navbar-brand {
     color: #fff!important;
     font-family: 'Oswald', sans-serif;

@@ -1,10 +1,17 @@
 {{> header}}
 <link rel="stylesheet" href="./assets/css/cupon.css">
+<link rel="stylesheet" href="./assets/css/imagen_perfil_empresa.css">
 
 <body>
     <div class="contenedor">
         <div class="menu" id="menu">
             <ul>
+                <li> <span id="perfilEmpresa">
+                        <a href=""> <img style="width: 150px;" id="imagenPE" src="./assets/uploads/{{empresa.imagen}}"
+                                alt=""></a>
+                    </span>
+
+                </li>
                 <li>
                     <img src="./assets/img/empresas/inicio.png" alt="">
                     <a href="/sistemaHome">Inicio</a>
@@ -44,21 +51,22 @@
 
 
                                     <div class="form-group col-md-12 mb-3">
-                                        <img style="width: 150px;" src="./assets/uploads/{{donacion.imagen}}" class="text-center"
-                                            alt="">
+                                        <img style="width: 150px;" src="./assets/uploads/{{donacion.imagen}}"
+                                            class="text-center" alt="">
                                     </div>
 
                                     <div class="form-group col-md-12 mb-3">
                                         <label for="" class="labelcupon">Titulo donación:</label>
-                                        <input required value="{{donacion.titulo_donacion}}" type="text" name="titulo_donacion"
-                                            placeholder="Escribe el titulo" class="form-control"
+                                        <input required value="{{donacion.titulo_donacion}}" type="text"
+                                            name="titulo_donacion" placeholder="Escribe el titulo" class="form-control"
                                             name="titulo_donacion" />
                                     </div>
 
                                     <div class="form-group col-md-12 mb-3">
                                         <label for="" class="labelcupon">N° de cuenta:</label>
-                                        <input required value="{{donacion.cuenta_bancaria}}" type="text" class="form-control"
-                                            placeholder="ingresa N° de cuenta" name="cuenta_bancaria" />
+                                        <input required value="{{donacion.cuenta_bancaria}}" type="text"
+                                            class="form-control" placeholder="ingresa N° de cuenta"
+                                            name="cuenta_bancaria" />
                                     </div>
 
                                     <div class="form-group col-md-12 mb-3">
@@ -74,7 +82,8 @@
                                             <option value="Banco Interacciones">Banco Interacciones</option>
                                             <option value="Banco Inbursa">Banco Inbursa</option>
                                             <option value="banca Mifel">banca Mifel</option>
-                                            <option value="Banco Regional de Monterrey">Banco Regional de Monterrey</option>
+                                            <option value="Banco Regional de Monterrey">Banco Regional de Monterrey
+                                            </option>
                                             <option value="Banco Invex">Banco Invex</option>
                                             <option value="Banco del Bajio
                                         ">Banco del Bajio
@@ -90,7 +99,8 @@
                                             <option value="Banco Monex">Banco Monex</option>
                                             <option value="Deutsche Bank México">Deutsche Bank México</option>
                                             <option value="Banco Azteca">Banco Azteca</option>
-                                            <option value="Banco Credit Suisse (México)">Banco Credit Suisse (México)</option>
+                                            <option value="Banco Credit Suisse (México)">Banco Credit Suisse (México)
+                                            </option>
                                             <option value="Banco Autofin México">Banco Autofin México</option>
                                             <option value="Barclays Bank México">Barclays Bank México</option>
                                             <option value="Banco Ahorro Famsa">Banco Ahorro Famsa</option>
@@ -109,7 +119,8 @@
                                             <option value="Banco Forjadores">Banco Forjadores</option>
                                             <option value="Bankaool">Bankaool</option>
                                             <option value="Banco Bancrea">Banco Bancrea</option>
-                                            <option value="Banco Inmobiliario Mexicano">Banco Inmobiliario Mexicano</option>
+                                            <option value="Banco Inmobiliario Mexicano">Banco Inmobiliario Mexicano
+                                            </option>
                                             <option value="Fundación Dondé Banco">Fundación Dondé Banco</option>
                                         </select>
                                     </div>
@@ -117,20 +128,22 @@
                                     <div class="form-row">
                                         <div class="col-md-6 mb-3">
                                             <label for="validationCustom03" class="labelcupon">Fecha Inicio:</label>
-                                            <input type="text" value="{{donacion.fecha_inicio}}" name="fecha_inicio" id="fecha_inicio"
-                                                class="form-control" />
+                                            <input type="text" value="{{donacion.fecha_inicio}}" name="fecha_inicio"
+                                                id="fecha_inicio" class="form-control" />
                                         </div>
                                         <div class="col-md-6 mb-3">
                                             <label for="validationCustom03" class="labelcupon">Fecha Final:</label>
-                                            <input type="date" required  value="{{donacion.fecha_final}}"class="form-control" name="fecha_final"
-                                                min="2020-05-19" max="2023-05-19" />
+                                            <input type="date" required value="{{donacion.fecha_final}}"
+                                                class="form-control" name="fecha_final" min="2020-05-19"
+                                                max="2023-05-19" />
                                         </div>
                                     </div>
 
                                     <div class="form-group col-md-12 mb-3">
                                         <label for="" class="labelcupon"> Descripción:</label>
-                                        <textarea required name="descripcion_donacion" id="txtAreaDesc" cols="50" rows="3"
-                                            class="form-control"  placeholder="Escribe descripción del cupon"></textarea>
+                                        <textarea required name="descripcion_donacion" id="txtAreaDesc" cols="50"
+                                            rows="3" class="form-control"
+                                            placeholder="Escribe descripción del cupon"></textarea>
                                         <button type="submit" id="btnAgregar" class="btn btn-outline-info btn-block ">
                                             Actualizar Donacion
                                         </button>
@@ -147,7 +160,7 @@
 
     <script src="./assets/js/fecha.js"></script>
     <script>
-        document.getElementById('txtAreaDesc').value="{{donacion.descripcion_donacion}}";
+        document.getElementById('txtAreaDesc').value = "{{donacion.descripcion_donacion}}";
         document.getElementById('selBanco').value = "{{donacion.banco}}";
     </script>
 

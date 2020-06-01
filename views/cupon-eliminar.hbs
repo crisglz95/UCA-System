@@ -1,10 +1,17 @@
 {{> header}}
 <link rel="stylesheet" href="./assets/css/cupon.css">
+<link rel="stylesheet" href="./assets/css/imagen_perfil_empresa.css">
 
 <body>
     <div class="contenedor">
         <div class="menu" id="menu">
             <ul>
+                <li> <span id="perfilEmpresa">
+                        <a href=""> <img style="width: 150px;" id="imagenPE" src="./assets/uploads/{{empresa.imagen}}"
+                                alt=""></a>
+                    </span>
+
+                </li>
                 <li>
                     <img src="./assets/img/empresas/inicio.png" alt="">
                     <a href="/sistemaHome">Inicio</a>
@@ -44,11 +51,11 @@
 
                                     <divclass="form-group col-md-12 mb-3">
                                         <a href="/sistemaCupones" class="btn btn-block btn-outline-success">Cancelar</a>
-                                    </div>
-                                    <div class="form-group col-md-12 mb-3">
-                                        <button type="submit" class="btn btn-block btn-outline-danger">Eliminar</button>
-                                    </div>
-                                    
+                            </div>
+                            <div class="form-group col-md-12 mb-3">
+                                <button type="submit" class="btn btn-block btn-outline-danger">Eliminar</button>
+                            </div>
+
                             </form>
                         </div>
                     </div>
@@ -61,10 +68,10 @@
 
     <script src="./assets/js/fecha.js"></script>
     <script>
-        document.getElementById('txtAreaDesc').value="{{cupon.decripcion}}";
-        document.getElementById('txtAreaCond').value="{{cupon.condiciones}}";
-        document.getElementById('tipo-cupon').value="{{cupon.tipo_cupon}}";
-        document.getElementById('valido-persona').value="{{cupon.valido_persona}}";
+        document.getElementById('txtAreaDesc').value = "{{cupon.decripcion}}";
+        document.getElementById('txtAreaCond').value = "{{cupon.condiciones}}";
+        document.getElementById('tipo-cupon').value = "{{cupon.tipo_cupon}}";
+        document.getElementById('valido-persona').value = "{{cupon.valido_persona}}";
     </script>
 
     {{> footer}}
