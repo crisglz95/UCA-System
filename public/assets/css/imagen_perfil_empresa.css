@@ -1,5 +1,37 @@
-#perfilEmpresa{
-    display: block;
-    margin-left: 25%;
-    margin-bottom: 10%;
+#perfilEmpresa {
+  display: block;
+  margin-left: 25%;
+  margin-bottom: 10%;
+}
+#imagenPE {
+  width: 150px;
+}
+
+@media (max-width: 1024px) {
+  #perfilEmpresa {
+    margin-left: 15%;
+  }
+}
+
+@media (max-width: 768px) {
+  #perfilEmpresa {
+    margin-left: 7%;
+  }
+  #imagenPE {
+    width: 120px;
+  }
+}
+
+@media (max-width: 768px) {
+  #perfilEmpresa {
+    margin-left: 16%;
+  }
+}
+@media (max-width: 320px) {
+  #perfilEmpresa {
+    margin-left: 12%;
+  }
+  #imagenPE {
+    width: 100px;
+  }
 }
