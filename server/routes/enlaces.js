@@ -96,7 +96,7 @@ app.get("/sistemaCupones", verificaToken, (req, res) => {
 
 app.get("/sistemaDonaciones", verificaToken, (req, res) => {
     let idEmpresa = req.empresa._id;
-    donacion.find({ empresa: idEmpresa }).exec((err, donacionesDB) => {
+    donacion.find({ empresa: idEmpresa, eliminado: false || undefined || null }).exec((err, donacionesDB) => {
         if (err) {
             return res.status(400).json({
                 ok: false,

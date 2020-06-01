@@ -9,7 +9,8 @@ let donacionSchema = new Schema({
     fecha_inicio: String,
     fecha_final: String,
     imagen: String,
-    empresa: { type: Schema.Types.ObjectId, ref: 'Formulario_Empresa' }
+    empresa: { type: Schema.Types.ObjectId, ref: 'Formulario_Empresa' },
+    eliminado: Boolean
 });
 
 module.exports = mongoose.model("Donacion", donacionSchema);

@@ -58,6 +58,56 @@ app.post("/donaciones", verificaToken, function(req, res) {
     });
 });
 
+app.get('/eliminarDonacion:id', function(req, res) {
+    let id = req.params.id;
+    id = id.substr(1, id.length - 1);
+    let body = req.body;
+
+    donaciones.findById(id, (err, donacionesDB) => {
+        if (err) {
+            return res.status(500).json({
+                ok: false,
+                err
+            });
+        }
+
+        if (!donacionesDB) {
+            return res.status(400).json({
+                ok: false,
+                err: {
+                    message: `Id no encontrado`
+                }
+            });
+        }
+
+        console.log(donacionesDB);
+
+        res.render('donaciones-eliminar', {
+            ok: true,
+            donacion: donacionesDB
+        })
+    })
+});
+
+app.post('/eliminarDonacion:id', function(req, res) {
+    let id = req.params.id;
+    id = id.substr(1, id.length - 1);
+    let body = req.body;
+    let status = true;
+
+    body.eliminado = status;
+
+    donaciones.findByIdAndUpdate(id, body, { new: true }, (err, donacionesDB) => {
+        if (err) {
+            return res.status(400).json({
+                ok: false,
+                err
+            });
+        }
+        res.render('home-sys', {});
+    });
+})
+
 app.get('/info-donaciones:id', function(req, res) {
     let id = req.params.id;
     id = id.substr(1, id.length - 1);
