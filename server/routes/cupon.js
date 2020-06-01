@@ -60,7 +60,7 @@ app.get('/editaCupon:id', function(req, res) {
 
 });
 
-app.post('/editaCupon:id', function(req, res) {
+app.post('/editaCupon:id', verificaToken, function(req, res) {
     let id = req.params.id;
     id = id.substr(1, id.length - 1);
     let body = req.body;
@@ -72,7 +72,9 @@ app.post('/editaCupon:id', function(req, res) {
                 err
             });
         }
-        res.render('home-sys', {})
+        res.render('home-sys', {
+            empresa: req.empresa
+        })
     });
 })
 
