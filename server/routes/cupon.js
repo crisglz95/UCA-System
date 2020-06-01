@@ -29,6 +29,53 @@ app.get("/listarCupones", function(req, res) {
     });
 });
 
+app.get('/editaCupon:id', function(req, res) {
+    let id = req.params.id;
+    id = id.substr(1, id.length - 1);
+    let body = req.body;
+
+    cupon.findById(id, (err, cuponDB) => {
+        if (err) {
+            return res.status(500).json({
+                ok: false,
+                err
+            });
+        }
+
+        if (!cuponDB) {
+            return res.status(400).json({
+                ok: false,
+                err: {
+                    message: `Id no encontrado`
+                }
+            })
+        }
+
+        console.log(cuponDB);
+        res.render('cupon-edit-sys', {
+            ok: true,
+            cupon: cuponDB
+        })
+    })
+
+});
+
+app.post('/editaCupon:id', function(req, res) {
+    let id = req.params.id;
+    id = id.substr(1, id.length - 1);
+    let body = req.body;
+
+    cupon.findByIdAndUpdate(id, body, { new: true }, (err, cuponDB) => {
+        if (err) {
+            return res.status(400).json({
+                ok: false,
+                err
+            });
+        }
+        res.render('home-sys', {})
+    });
+})
+
 app.get('/eliminaCupon:id', function(req, res) {
     let id = req.params.id;
     id = id.substr(1, id.length - 1);
@@ -58,7 +105,7 @@ app.get('/eliminaCupon:id', function(req, res) {
         })
     })
 
-})
+});
 
 app.post('/eliminarCupon:id', function(req, res) {
     let id = req.params.id;
