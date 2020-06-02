@@ -216,6 +216,35 @@ app.get("/CuponesEstudiantes", function(req, res) {
 });
 
 // LISTAR CUPONES PARA ENVIOS GRATIS
+app.get("/NuevosCupones", function(req, res) {
+    cupon.find({}).sort({ fecha_inicio: -1 }).exec((err, cupones) => {
+        if (err) {
+            return res.status(400).json({
+                ok: false,
+                err,
+            });
+        }
+        res.render("cupon", {
+            cupones,
+        });
+    });
+});
+
+app.get("/UltimaOportunidad", function(req, res) {
+    cupon.find({}).sort({ fecha_final: 1 }).exec((err, cupones) => {
+        if (err) {
+            return res.status(400).json({
+                ok: false,
+                err,
+            });
+        }
+        res.render("cupon", {
+            cupones,
+        });
+    });
+});
+
+// LISTAR CUPONES PARA ENVIOS GRATIS
 app.get("/CuponesEnviosGratis", function(req, res) {
     cupon.find({ tipo_cupon: "envios" }).exec((err, cupones) => {
         if (err) {
