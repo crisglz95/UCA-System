@@ -217,7 +217,7 @@ app.get("/CuponesEstudiantes", function(req, res) {
 
 // LISTAR CUPONES PARA ENVIOS GRATIS
 app.get("/NuevosCupones", function(req, res) {
-    cupon.find({}).sort({ fecha_inicio: -1, eliminado: false || undefined || null }).exec((err, cupones) => {
+    cupon.find({ eliminado: false || undefined || null }).sort({ fecha_inicio: -1 }).exec((err, cupones) => {
         if (err) {
             return res.status(400).json({
                 ok: false,
@@ -231,7 +231,7 @@ app.get("/NuevosCupones", function(req, res) {
 });
 
 app.get("/UltimaOportunidad", function(req, res) {
-    cupon.find({}).sort({ fecha_final: 1, eliminado: false || undefined || null }).exec((err, cupones) => {
+    cupon.find({ eliminado: false || undefined || null }).sort({ fecha_final: 1 }).exec((err, cupones) => {
         if (err) {
             return res.status(400).json({
                 ok: false,
