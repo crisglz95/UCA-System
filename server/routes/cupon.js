@@ -170,7 +170,7 @@ app.get('/ver-info:id', function(req, res) {
 
 // LISTAR CUPONES DESCUENTOS
 app.get("/CuponesDescuentos", function(req, res) {
-    cupon.find({ tipo_cupon: "descuentos" }).exec((err, cupones) => {
+    cupon.find({ tipo_cupon: "descuentos", eliminado: false || undefined || null }).exec((err, cupones) => {
         if (err) {
             return res.status(400).json({
                 ok: false,
@@ -186,7 +186,7 @@ app.get("/CuponesDescuentos", function(req, res) {
 
 // LISTAR CUPONES PROMOCIONES
 app.get("/CuponesPromociones", function(req, res) {
-    cupon.find({ tipo_cupon: "promociones" }).exec((err, cupones) => {
+    cupon.find({ tipo_cupon: "promociones", eliminado: false || undefined || null }).exec((err, cupones) => {
         if (err) {
             return res.status(400).json({
                 ok: false,
@@ -202,7 +202,7 @@ app.get("/CuponesPromociones", function(req, res) {
 
 // LISTAR CUPONES PARA ESTUDIANTES
 app.get("/CuponesEstudiantes", function(req, res) {
-    cupon.find({ valido_persona: "estudiantes" }).exec((err, cupones) => {
+    cupon.find({ valido_persona: "estudiantes", eliminado: false || undefined || null }).exec((err, cupones) => {
         if (err) {
             return res.status(400).json({
                 ok: false,
@@ -217,7 +217,7 @@ app.get("/CuponesEstudiantes", function(req, res) {
 
 // LISTAR CUPONES PARA ENVIOS GRATIS
 app.get("/NuevosCupones", function(req, res) {
-    cupon.find({}).sort({ fecha_inicio: -1 }).exec((err, cupones) => {
+    cupon.find({}).sort({ fecha_inicio: -1, eliminado: false || undefined || null }).exec((err, cupones) => {
         if (err) {
             return res.status(400).json({
                 ok: false,
@@ -231,7 +231,7 @@ app.get("/NuevosCupones", function(req, res) {
 });
 
 app.get("/UltimaOportunidad", function(req, res) {
-    cupon.find({}).sort({ fecha_final: 1 }).exec((err, cupones) => {
+    cupon.find({}).sort({ fecha_final: 1, eliminado: false || undefined || null }).exec((err, cupones) => {
         if (err) {
             return res.status(400).json({
                 ok: false,
@@ -246,7 +246,7 @@ app.get("/UltimaOportunidad", function(req, res) {
 
 // LISTAR CUPONES PARA ENVIOS GRATIS
 app.get("/CuponesEnviosGratis", function(req, res) {
-    cupon.find({ tipo_cupon: "envios" }).exec((err, cupones) => {
+    cupon.find({ tipo_cupon: "envios", eliminado: false || undefined || null }).exec((err, cupones) => {
         if (err) {
             return res.status(400).json({
                 ok: false,
