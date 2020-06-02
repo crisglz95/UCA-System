@@ -24,12 +24,12 @@
                         <div class="navbar-nav">
                             <ul>
                                 <p id="cuponesDTXT">Cupones de descuento</p>
-                                <li>
+                                {{!-- <li>
                                     <hr />
                                     <a href="" style="text-decoration: none;" class="cuponA"><img
                                             src="./assets/img/icons/MasUtilizados.png" alt="" />
                                         <span class="cupon">Cupones más utilizados</span></a>
-                                </li>
+                                </li> --}}
                                 <hr />
                                 <li>
                                     <a href="/CuponesEnviosGratis" style="text-decoration: none;" class="cuponA"><img
@@ -85,7 +85,8 @@
                             {{#each cupones}}
 
                             <tr>
-                                <td> <img id="image" src="./assets/uploads/{{this.imagen_cupon}}" alt=""> </td>
+                                <td> <img id="image" src="./assets/uploads/{{this.imagen_cupon}}" alt="">
+                                </td>
                                 <td id="T">{{this.titulo_cupon}}</td>
                                 <td id="D">{{this.decripcion}}</td>
 

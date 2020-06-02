@@ -10,6 +10,9 @@
 
 {{> header}}
 
+<link rel="stylesheet" href="./assets/css/cupones_style_system.css">
+<link rel="stylesheet" href="./assets/css/TablesResponsive.css">
+
 <body>
   {{> navbar}}
 
@@ -148,22 +151,72 @@
 
   <section id="Cupones+Buscados" class="mt-5 mb-5">
     <div class="container">
-      <p id="cuponesMasbuscados">LOS MÁS BUSCADOS...</p>
+      <p id="cuponesMasbuscados">ALGUNOS CUPONES....</p>
 
       <div class="table-responsive-sm">
-        <table class="table">
-          <tr>
-            <th>Imagen Cupon</th>
-            <th>2 X 1 PIZZAS</th>
-            <th>En la compra de una pizza , llevate la segunda Gratis!!</th>
-          </tr>
-          <tr>
-            <th>Imagen Cupon</th>
-            <th>2 X 1 PIZZAS</th>
-            <th>En la compra de una pizza , llevate la segunda Gratis!!</th>
-          </tr>
+        <table class="table" id="table_id">
+          <thead>
+          </thead>
+          <tbody>
+
+            {{#each cupones}}
+
+            <tr>
+              <td> <img id="image" src="./assets/uploads/{{this.imagen_cupon}}" alt="">
+              </td>
+              <td id="T">{{this.titulo_cupon}}</td>
+              <td id="D">{{this.decripcion}}</td>
+
+              <td id="boton"> <button type="button" class="btn btn-outline-info btn-block" data-toggle="modal"
+                  data-target="#miModal{{@key}}">
+                  Ver
+                </button></td>
+            </tr>
+            <!-- MODAL -->
+
+
+            {{/each}}
+          </tbody>
         </table>
+        {{#each cupones}}
+        <div class="modal fade" id="miModal{{@key}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+          aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true" class="text-center"> &times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div id="contenedorImg">
+
+                  <img id="imgModal" class="img-responsive" src="./assets/uploads/{{this.imagen_cupon}}" alt="" />
+                </div>
+                <p id="tituloCupon">
+                  {{this.titulo_cupon}}
+                </p>
+
+                <p class="TxtMInf">
+                  Codigo:
+                  <button id="btnCopy" style="text-decoration: none;" type="button" class="btn btn-link">
+                    <b> <span id="text" class="codigo">{{this.codigo}}</span></b>
+                  </button>
+                </p>
+                <p class="TxtMInf">Compra minima: {{this.minimo_compra}}</p>
+                <p class="TxtMInf">Condiciones: {{this.condiciones}}</p>
+                <p class="TxtMInf">Valido para: {{this.valido_persona}}</p>
+                <p class="TxtMInf">Tipo de cupón: {{this.tipo_cupon}}</p>
+                <p class="TxtMInf">Descripcion: {{this.decripcion}}</p>
+                <p class="TxtMInf">Fecha vencimiento {{this.fecha_final}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {{/each}}
       </div>
+
     </div>
   </section>
 
