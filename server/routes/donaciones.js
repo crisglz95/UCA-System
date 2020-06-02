@@ -7,7 +7,7 @@ const { verificaToken } = require("../middlewares/autenticacion");
 
 // LISTAR DONACIONES GENERALES
 app.get("/donaciones", function(req, res) {
-    donaciones.find({}).exec((err, donacion) => {
+    donaciones.find({ eliminado: false || undefined || null }).exec((err, donacion) => {
         if (err) {
             return res.status(400).json({
                 ok: false,

@@ -55,7 +55,7 @@ app.get("/consultoria_y_capacitacion", (req, res) => {
 
 
 app.get("/cupon", (req, res) => {
-    cupon.find({}).exec((err, cupones) => {
+    cupon.find({ eliminado: false || undefined || null }).exec((err, cupones) => {
         if (err) {
             return res.status(400).json({
                 ok: false,
