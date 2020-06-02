@@ -171,6 +171,7 @@ function imagenDonacion(id, res, nombreArchivo) {
                 ok: true,
                 empresa: logoEmpresa,
                 img: nombreArchivo,
+                texto: 'Donacion'
             });
         });
     });
@@ -203,6 +204,7 @@ function imagenCupon(id, res, nombreArchivo) {
                 ok: true,
                 empresa: logoEmpresa,
                 img: nombreArchivo,
+                texto: 'Cupon'
             });
         });
     });
@@ -235,6 +237,7 @@ function imagenEmpresa(id, res, nombreArchivo) {
                 ok: true,
                 empresa: logoEmpresa,
                 img: nombreArchivo,
+                texto: 'Empresa'
             });
         });
     });
