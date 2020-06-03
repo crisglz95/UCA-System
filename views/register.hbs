@@ -4,13 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Registrate</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
         integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/css/registro.css">
+    <link rel="icon" href="./assets/img/1.png" />
+
 </head>
 
 <body>
@@ -23,11 +25,11 @@
                 <form action="/empresa" method="POST">
                     <div class="form-group">
                         <label for="">Nombre Empresa</label>
-                        <input type="text" class="form-control" name="nombre_empresa">
+                        <input type="text" required class="form-control" name="nombre_empresa">
                     </div>
                     <div class="form-group">
                         <label for="">Giro Empresarial</label>
-                        <select name="giro_empresarial" id="" class="form-control">
+                        <select required name="giro_empresarial" id="" class="form-control">
                             <option value="">Selecciona el giro de tu empresa</option>
                             <option value="Restaurantes/Servicios de comida">Restaurantes/Servicios de comida</option>
                             <option value="Hoteleria">Hoteleria</option>
@@ -46,54 +48,69 @@
                     <div class="doble-campo">
                         <div class="form-group w-50 mr-3">
                             <label for="">Nombre Completo</label>
-                            <input type="text" class="form-control" name="nombre_completo">
+                            <input required type="text" class="form-control" name="nombre_completo">
                         </div>
-                        <div class="form-group w-50 ml-3">
-                            <label for="">Telefono</label>
-                            <input type="text" class="form-control" name="tel">
-                        </div>
+
+
+
                     </div>
                     <div class="doble-campo">
-                        <div class="form-group w-50 mr-3">
-                            <label for="">Carrera:</label>
-                            <input type="text" class="form-control" name="carrera">
+                        <div class="form-group w-50 ml-3">
+                            <label for="">Telefono</label>
+                            <input required type="text" class="form-control" name="tel">
                         </div>
                         <div class="form-group w-50 ml-3">
-                            <label for="">Matricula</label>
-                            <input type="text" class="form-control" name="matricula">
+                            <label for="">RFC</label>
+                            <input required type="text" class="form-control" placeholder="*Campo no obligatorio*"
+                                name="rfc">
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="">Domicilio</label>
-                        <input type="text" class="form-control" name="calle">
-                    </div>
-                    <div class="doble-campo">
-                        <div class="form-group w-50 mr-3">
-                            <label for="">Colonia</label>
-                            <input type="text" class="form-control" name="numero_dir">
-                        </div>
-                        <div class="form-group w-50 ml-3">
-                            <label for="">Codigo Postal</label>
-                            <input type="number" class="form-control" name="cp">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="">Descripción empresa</label>
-                        <textarea name="descripcion_empresa" id="" cols="30" rows="4" class="form-control"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label for="">Correo Electronico</label>
-                        <input type="email" class="form-control" name="correo">
-                    </div>
-                    <div class="form-group">
-                        <label for="">Contraseña</label>
-                        <input type="password" class="form-control" name="password">
-                    </div>
-                    <button type="submit" name="" id="" class="btn btn-outline-info btn-block mb-5">Registrar</button>
-                </form>
+
+
+
             </div>
+            <div class="doble-campo">
+                <div class="form-group w-50 mr-3">
+                    <label for="">Carrera:</label>
+                    <input required type="text" class="form-control" name="carrera">
+                </div>
+                <div class="form-group w-50 ml-3">
+                    <label for="">Matricula</label>
+                    <input required type="text" class="form-control" name="matricula">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="">Domicilio</label>
+                <input required type="text" class="form-control" name="calle">
+            </div>
+            <div class="doble-campo">
+                <div class="form-group w-50 mr-3">
+                    <label for="">Colonia</label>
+                    <input required type="text" class="form-control" name="numero_dir">
+                </div>
+                <div class="form-group w-50 ml-3">
+                    <label for="">Codigo Postal</label>
+                    <input required type="number" class="form-control" name="cp">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="">Descripción empresa</label>
+                <textarea name="descripcion_empresa" id="" cols="30" rows="4" class="form-control"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="">Correo Electronico</label>
+                <input requireds type="email" class="form-control" name="correo">
+            </div>
+            <div class="form-group">
+                <label for="">Contraseña</label>
+                <input required type="password" class="form-control" name="password">
+            </div>
+            <button type="submit" name="" id="" class="btn btn-outline-info btn-block mb-5">Registrar</button>
+            </form>
         </div>
+    </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js "

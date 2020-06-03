@@ -6,189 +6,191 @@ const app = express();
 const { verificaToken } = require("../middlewares/autenticacion");
 
 // LISTAR DONACIONES GENERALES
-app.get("/donaciones", function(req, res) {
-    donaciones.find({ eliminado: false || undefined || null }).exec((err, donacion) => {
-        if (err) {
-            return res.status(400).json({
-                ok: false,
-                err,
-            });
-        }
-
-        res.render("donaciones", {
-            ok: true,
-            donacion,
+app.get("/donaciones", function (req, res) {
+  donaciones
+    .find({ eliminado: false || undefined || null })
+    .exec((err, donacion) => {
+      if (err) {
+        return res.status(400).json({
+          ok: false,
+          err,
         });
+      }
+
+      res.render("donaciones", {
+        ok: true,
+        donacion,
+      });
     });
 });
 
 //LISTAR DONACIONES DE UNA EMPRESA
-app.get("/donacionesEmpresa", function(req, res) {
-    cupon.find({}).exec((err, cupones) => {
-        if (err) {
-            return res.status(400).json({
-                ok: false,
-                err,
-            });
-        }
+app.get("/donacionesEmpresa", function (req, res) {
+  cupon.find({}).exec((err, cupones) => {
+    if (err) {
+      return res.status(400).json({
+        ok: false,
+        err,
+      });
+    }
 
-        res.json({
-            ok: true,
-            cupones,
-        });
+    res.json({
+      ok: true,
+      cupones,
     });
+  });
 });
 
 // POST DONACIONES
-app.post("/donaciones", verificaToken, function(req, res) {
-    console.log("POST /donaciones");
-    console.log(req.body);
-    let body = req.body;
-    body.empresa = req.empresa._id;
+app.post("/donaciones", verificaToken, function (req, res) {
+  console.log("POST /donaciones");
+  console.log(req.body);
+  let body = req.body;
+  body.empresa = req.empresa._id;
 
-    let DONAR = new donaciones(body);
+  let DONAR = new donaciones(body);
 
-    DONAR.save((err, donarDB) => {
-        if (err) res.status(500).send({ message: `Error: ${err}` });
-        res.render("agregar-foto-donacion", {
-            //register-success
-            DONAR: donarDB,
-            enlace: "/sistemaDonaciones",
-            boton: "Donaciones",
-        });
+  DONAR.save((err, donarDB) => {
+    if (err) res.status(500).send({ message: `Error: ${err}` });
+    res.render("agregar-foto-donacion", {
+      //register-success
+      DONAR: donarDB,
+      enlace: "/sistemaDonaciones",
+      boton: "Donaciones",
     });
+  });
 });
 
-app.get("/editarDonacion:id", function(req, res) {
-    let id = req.params.id;
-    id = id.substr(1, id.length - 1);
-    let body = req.body;
+app.get("/editarDonacion:id", function (req, res) {
+  let id = req.params.id;
+  id = id.substr(1, id.length - 1);
+  let body = req.body;
 
-    donaciones.findById(id, (err, donacionesDB) => {
-        if (err) {
-            return res.status(500).json({
-                ok: false,
-                err,
-            });
-        }
+  donaciones.findById(id, (err, donacionesDB) => {
+    if (err) {
+      return res.status(500).json({
+        ok: false,
+        err,
+      });
+    }
 
-        if (!donacionesDB) {
-            return res.status(400).json({
-                ok: false,
-                err: {
-                    message: `Id no encontrado`,
-                },
-            });
-        }
+    if (!donacionesDB) {
+      return res.status(400).json({
+        ok: false,
+        err: {
+          message: `Id no encontrado`,
+        },
+      });
+    }
 
-        console.log(donacionesDB);
+    console.log(donacionesDB);
 
-        res.render("donaciones-edit-sys", {
-            ok: true,
-            donacion: donacionesDB,
-        });
+    res.render("donaciones-edit-sys", {
+      ok: true,
+      donacion: donacionesDB,
     });
+  });
 });
 
-app.post("/editarDonacion:id", verificaToken, function(req, res) {
-    let id = req.params.id;
-    id = id.substr(1, id.length - 1);
-    let body = req.body;
+app.post("/editarDonacion:id", verificaToken, function (req, res) {
+  let id = req.params.id;
+  id = id.substr(1, id.length - 1);
+  let body = req.body;
 
-    donaciones.findByIdAndUpdate(id, body, { new: true }, (err, donacionesDB) => {
-        if (err) {
-            return res.status(400).json({
-                ok: false,
-                err,
-            });
-        }
-        res.render("home-sys", {
-            empresa: req.empresa
-        });
+  donaciones.findByIdAndUpdate(id, body, { new: true }, (err, donacionesDB) => {
+    if (err) {
+      return res.status(400).json({
+        ok: false,
+        err,
+      });
+    }
+    res.render("home-sys", {
+      empresa: req.empresa,
     });
+  });
 });
 
-app.get("/eliminarDonacion:id", function(req, res) {
-    let id = req.params.id;
-    id = id.substr(1, id.length - 1);
-    let body = req.body;
+app.get("/eliminarDonacion:id", function (req, res) {
+  let id = req.params.id;
+  id = id.substr(1, id.length - 1);
+  let body = req.body;
 
-    donaciones.findById(id, (err, donacionesDB) => {
-        if (err) {
-            return res.status(500).json({
-                ok: false,
-                err,
-            });
-        }
+  donaciones.findById(id, (err, donacionesDB) => {
+    if (err) {
+      return res.status(500).json({
+        ok: false,
+        err,
+      });
+    }
 
-        if (!donacionesDB) {
-            return res.status(400).json({
-                ok: false,
-                err: {
-                    message: `Id no encontrado`,
-                },
-            });
-        }
+    if (!donacionesDB) {
+      return res.status(400).json({
+        ok: false,
+        err: {
+          message: `Id no encontrado`,
+        },
+      });
+    }
 
-        console.log(donacionesDB);
+    console.log(donacionesDB);
 
-        res.render("donaciones-eliminar", {
-            ok: true,
-            donacion: donacionesDB,
-        });
+    res.render("donaciones-eliminar", {
+      ok: true,
+      donacion: donacionesDB,
     });
+  });
 });
 
-app.post("/eliminarDonacion:id", verificaToken, function(req, res) {
-    let id = req.params.id;
-    id = id.substr(1, id.length - 1);
-    let body = req.body;
-    let status = true;
+app.post("/eliminarDonacion:id", verificaToken, function (req, res) {
+  let id = req.params.id;
+  id = id.substr(1, id.length - 1);
+  let body = req.body;
+  let status = true;
 
-    body.eliminado = status;
+  body.eliminado = status;
 
-    donaciones.findByIdAndUpdate(id, body, { new: true }, (err, donacionesDB) => {
-        if (err) {
-            return res.status(400).json({
-                ok: false,
-                err,
-            });
-        }
-        res.render("home-sys", {
-            empresa: req.empresa
-        });
+  donaciones.findByIdAndUpdate(id, body, { new: true }, (err, donacionesDB) => {
+    if (err) {
+      return res.status(400).json({
+        ok: false,
+        err,
+      });
+    }
+    res.render("home-sys", {
+      empresa: req.empresa,
     });
+  });
 });
 
-app.get("/info-donaciones:id", function(req, res) {
-    let id = req.params.id;
-    id = id.substr(1, id.length - 1);
-    let body = req.body;
+app.get("/info-donaciones:id", function (req, res) {
+  let id = req.params.id;
+  id = id.substr(1, id.length - 1);
+  let body = req.body;
 
-    donaciones.findById(id, (err, donacionesDB) => {
-        if (err) {
-            return res.status(500).json({
-                ok: false,
-                err,
-            });
-        }
+  donaciones.findById(id, (err, donacionesDB) => {
+    if (err) {
+      return res.status(500).json({
+        ok: false,
+        err,
+      });
+    }
 
-        if (!donacionesDB) {
-            return res.status(400).json({
-                ok: false,
-                err: {
-                    message: "Id no encontrado",
-                },
-            });
-        }
+    if (!donacionesDB) {
+      return res.status(400).json({
+        ok: false,
+        err: {
+          message: "Id no encontrado",
+        },
+      });
+    }
 
-        console.log(donacionesDB);
+    console.log(donacionesDB);
 
-        res.render("donaciones-ver-sys", {
-            ok: true,
-            donacion: donacionesDB,
-        });
+    res.render("donaciones-ver-sys", {
+      ok: true,
+      donacion: donacionesDB,
     });
+  });
 });
 
 module.exports = app;
