@@ -50,7 +50,7 @@ app.get("/", function(req, res, next) {
         });
 });
 
-app.get("/editaCupon:id", function(req, res) {
+app.get("/editaCupon:id", verificaToken, function(req, res) {
     let id = req.params.id;
     id = id.substr(1, id.length - 1);
     let body = req.body;
@@ -76,6 +76,7 @@ app.get("/editaCupon:id", function(req, res) {
         res.render("cupon-edit-sys", {
             ok: true,
             cupon: cuponDB,
+            empresa: req.empresa
         });
     });
 });
@@ -98,7 +99,7 @@ app.post("/editaCupon:id", verificaToken, function(req, res) {
     });
 });
 
-app.get("/eliminaCupon:id", function(req, res) {
+app.get("/eliminaCupon:id", verificaToken, function(req, res) {
     let id = req.params.id;
     id = id.substr(1, id.length - 1);
     let body = req.body;
@@ -124,6 +125,7 @@ app.get("/eliminaCupon:id", function(req, res) {
         res.render("cupon-eliminar", {
             ok: true,
             cupon: cuponDB,
+            empresa: req.empresa
         });
     });
 });
@@ -149,7 +151,7 @@ app.post("/eliminarCupon:id", verificaToken, function(req, res) {
     });
 });
 
-app.get("/ver-info:id", function(req, res) {
+app.get("/ver-info:id", verificaToken, function(req, res) {
     let id = req.params.id;
     id = id.substr(1, id.length - 1);
     let body = req.body;
@@ -181,6 +183,7 @@ app.get("/ver-info:id", function(req, res) {
         res.render("cupon-ver-sys", {
             ok: true,
             cupon: cuponDB,
+            empresa: req.empresa
         });
     });
 });
