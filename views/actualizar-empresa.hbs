@@ -49,6 +49,7 @@
                         <select name="giro_empresarial" id="" class="form-control">
                             <option value="{{empresa.giro_empresarial}}">{{empresa.giro_empresarial}}</option>
                             <option value="">Selecciona el giro de tu empresa</option>
+                            <option value="Restaurantes/Servicios de comida">Emprendedores</option>
                             <option value="Restaurantes/Servicios de comida">Restaurantes/Servicios de comida</option>
                             <option value="Hoteleria">Hoteleria</option>
                             <option value="Consultoria Empresarial">Consultoria Empresarial</option>
@@ -76,7 +77,7 @@
                         </div>
                         <div class="form-group w-50 ml-3">
                             <label for="">RFC</label>
-                            <input required type="text" class="form-control" name="rfc">
+                            <input placeholder="*Campo opcional*" type="text" class="form-control" name="rfc">
                         </div>
                     </div>
 
@@ -90,6 +91,33 @@
                             <input type="text" class="form-control" value="{{empresa.matricula}}" name="matricula">
                         </div>
                     </div>
+
+
+                    <div class="doble-campo">
+                        <div class="form-group w-50 mr-3">
+                            <label for="">Estado:</label>
+                            <input required type="text" value="{{empresa.estado}}" class="form-control" name="estado">
+                        </div>
+                        <div class="form-group w-50 ml-3">
+                            <label for="">Municipio</label>
+                            <select required name="municipio" id="" value="{{empresa.municipio}}" class="form-control">
+                                <option>Selecciona Municipio</option>
+                                <option value="Aguascalientes">Aguascalientes</option>
+                                <option value="Asientos"> Asientos</option>
+                                <option value="Calvillo"> Calvillo</option>
+                                <option value="Cosío"> Cosío</option>
+                                <option value="Jesús María"> Jesús María</option>
+                                <option value="Pabellón de Arteaga"> Pabellón de Arteaga</option>
+                                <option value="Rincón de Romos"> Rincón de Romos</option>
+                                <option value="San José de Gracia"> San José de Gracia</option>
+                                <option value="Tepezalá"> Tepezalá</option>
+                                <option value="El Llano"> El Llano</option>
+                                <option value="San Francisco de los Romo">San Francisco de los Romo</option>
+                            </select>
+
+                        </div>
+                    </div>
+
 
                     <div class="form-group">
                         <label for="">Domicilio</label>
