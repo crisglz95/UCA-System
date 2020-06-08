@@ -73,7 +73,7 @@
                     <div class="doble-campo">
                         <div class="form-group w-50 mr-3">
                             <label for="">Telefono:</label>
-                            <input required type="text" class="form-control" name="tel">
+                            <input required type="text" class="form-control" name="tel" value="{{empresa.tel}}">
                         </div>
                         <div class="form-group w-50 ml-3">
                             <label for="">RFC</label>
@@ -135,7 +135,7 @@
                     </div>
                     <div class="form-group">
                         <label for="">Descripción empresa</label>
-                        <textarea name="descripcion_empresa" id="" cols="30" rows="4"
+                        <textarea name="descripcion_empresa" id="txtAreaDesc" cols="30" rows="4"
                             value="{{empresa.descripcion_empresa}}" class="form-control"></textarea>
                     </div>
                     <div class="form-group">
@@ -153,16 +153,8 @@
             </div>
         </div>
     </div>
-    {{>footer}}
     <script>
-        document.ready = document.getElementById('giro').value = "{{ empresa.giro_empresarial }}";
-        document.ready = document.getElementById('nombre').value = "{{empresa.nombre_completo}}";
-        document.ready = document.getElementById('tel').value = "{{ empresa.tel }}";
-        document.ready = document.getElementById('nombre').value = "{{empresa.carrera}}";
-        document.ready = document.getElementById('nombre').value = "{{empresa.calle}}";
-        document.ready = document.getElementById('nombre').value = "{{empresa.numero_dir}}";
-        document.ready = document.getElementById('nombre').value = "{{empresa.cp}}";
-        document.ready = document.getElementById('nombre').value = "{{empresa.descripcion_empresa}}";
-        document.ready = document.getElementById('nombre').value = "{{empresa.correo}}";
+        document.getElementById('txtAreaDesc').value = "{{empresa.descripcion_empresa}}";
+        document.getElementById('giro').value = "{{ empresa.giro_empresarial }}";
     </script>
-</body>
+    {{>footer}}
