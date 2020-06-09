@@ -4,36 +4,40 @@ const uniqueValidator = require("mongoose-unique-validator");
 let Schema = mongoose.Schema;
 
 let empresaSchema = new Schema({
-  nombre_completo: String,
-  correo: {
-    type: String,
-    unique: true,
-    // required: [true, 'El correo electronico es necesario']
-  },
-  nombre_empresa: String,
-  tel: Number,
-  giro_empresarial: String,
-  cuenta_bancaria: Number,
-  matricula: String,
-  carrera: String,
-  descripcion_empresa: String,
-  calle: String,
-  cp: Number,
-  rfc: String,
-  // numero dir es la colonia
-  numero_dir: String,
-  estado: String,
-  municipio: String,
-  password: String,
-  imagen: String,
-  status: {
-    type: Boolean,
-    default: false,
-  },
-  administrador: {
-    type: Boolean,
-    default: false,
-  },
+    nombre_completo: String,
+    correo: {
+        type: String,
+        unique: true,
+        // required: [true, 'El correo electronico es necesario']
+    },
+    nombre_empresa: String,
+    tel: Number,
+    giro_empresarial: String,
+    cuenta_bancaria: Number,
+    matricula: String,
+    carrera: String,
+    descripcion_empresa: String,
+    calle: String,
+    cp: Number,
+    rfc: String,
+    // numero dir es la colonia
+    numero_dir: String,
+    estado: String,
+    municipio: String,
+    password: String,
+    imagen: String,
+    status: {
+        type: Boolean,
+        default: false,
+    },
+    administrador: {
+        type: Boolean,
+        default: false,
+    },
+    eliminado: {
+        type: Boolean,
+        default: false
+    }
 });
 
 // empresaSchema.plugin(uniqueValidator, {
