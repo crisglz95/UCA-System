@@ -24,7 +24,7 @@ app.get('/administrador-home', verificaToken, (req, res) => {
 });
 
 app.get('/lista-empresa', verificaToken, (req, res) => {
-    Empresa.find({ status: false, administrador: false, eliminado: false || undefined || null }).exec((err, EmpresaDB) => {
+    Empresa.find({ status: false, administrador: false, eliminado: false | undefined | null }).exec((err, EmpresaDB) => {
         if (err) {
             return res.status(400).json({
                 ok: false,
