@@ -26,7 +26,9 @@ hbs.registerPartials(__dirname + '/../views/partials');
 
 app.use(require('./routes/index'));
 
-mongoose.connect('mongodb://localhost:27017/FormularioEmpresas', (err, res) => {
+//mongodb://localhost:27017/FormularioEmpresas
+
+mongoose.connect('mongodb+srv://Negocity_UserBD:UCA123@cluster0.ajoeg.mongodb.net/test', (err, res) => {
     if (err) throw err;
 
     console.log('Base de dato ONLINE');

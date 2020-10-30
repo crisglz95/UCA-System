@@ -10,6 +10,13 @@ const { verificaToken } = require("../middlewares/autenticacion");
 const fs = require("fs");
 const path = require("path");
 
+const cloudinary = require('cloudinary').v2;
+cloudinary.config({
+    cloud_name: 'wolf-code',
+    api_key: '622561925972199',
+    api_secret: '1QsmR8t0FawDTGPeYsXqkhnhL04'
+});
+
 app.use(fileUpload({ useTempFiles: true }));
 
 app.get("/subirImagen", verificaToken, function(req, res) {
@@ -29,6 +36,7 @@ app.post("/upload", verificaToken, function(req, res) {
 
     //let archivo = req.files.archivo;
     let archivo = req.files.imagen_cupon;
+    console.log('path', archivo.tempFilePath);
     let nombreCortado = archivo.name.split(".");
     console.log(nombreCortado);
     console.log(nombreCortado.length);
@@ -46,7 +54,19 @@ app.post("/upload", verificaToken, function(req, res) {
         });
     }
 
-    let nombreArchivo = `${id} - ${new Date().getMilliseconds()}.${extencion}`;
+    // let nombreArchivo = `${id} - ${new Date().getMilliseconds()}.${extencion}`;
+    let nombreArchivo = `${id} - ${new Date().getMilliseconds()}`;
+
+    //Implementacion de Cloudinary
+    //cloudinary.v2.uploader.upload("../../public/assets/uploads/no-image.jpg", function(err, res) { console.log(res, err); });
+    cloudinary.uploader.upload(archivo.tempFilePath, {public_id: `uca/${nombreArchivo}`, tags: `blog`}, 
+        function(err, image){
+            if(err) res.send(err);
+            console.log('File upload with cloudinary');
+            // res.json(image);
+        }
+    )
+
     archivo.mv(`public/assets/uploads/${nombreArchivo}`, (err) => {
         if (err) {
             return res.status(500).json({
@@ -54,6 +74,7 @@ app.post("/upload", verificaToken, function(req, res) {
                 err,
             });
         }
+        nombreArchivo = `${nombreArchivo}.${extencion}`;
         imagenEmpresa(id, res, nombreArchivo);
     });
 });
