@@ -110,7 +110,16 @@ app.post("/upload-cupon:id", verificaToken, function(req, res) {
         });
     }
 
-    let nombreArchivo = `${id} - ${new Date().getMilliseconds()}.${extencion}`;
+    let nombreArchivo = `${id} - ${new Date().getMilliseconds()}`;
+
+    cloudinary.uploader.upload(archivo.tempFilePath, {public_id: `uca/${nombreArchivo}`, tags: `blog`}, 
+        function(err, image){
+            if(err) res.send(err);
+            console.log('File upload with cloudinary');
+            // res.json(image);
+        }
+    )
+
     archivo.mv(`public/assets/uploads/${nombreArchivo}`, (err) => {
         if (err) {
             return res.status(500).json({
@@ -153,7 +162,16 @@ app.post("/upload-donacion:id", verificaToken, function(req, res) {
         });
     }
 
-    let nombreArchivo = `${id} - ${new Date().getMilliseconds()}.${extencion}`;
+    let nombreArchivo = `${id} - ${new Date().getMilliseconds()}`;
+
+    cloudinary.uploader.upload(archivo.tempFilePath, {public_id: `uca/${nombreArchivo}`, tags: `blog`}, 
+        function(err, image){
+            if(err) res.send(err);
+            console.log('File upload with cloudinary');
+            // res.json(image);
+        }
+    )
+
     archivo.mv(`public/assets/uploads/${nombreArchivo}`, (err) => {
         if (err) {
             return res.status(500).json({
